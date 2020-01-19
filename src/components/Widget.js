@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import data from './data'
 import { Container, Col, Row } from 'react-bootstrap'
+import data from './data'
+import Icon from './Icon'
 
 const Widget = () => {
  const [tabSelect, setTabSelect] = useState(true)
- const [value, setValue] = useState('')
  const [current, setCurrent] = useState('')
+ const [value, setValue] = useState('')
+
  const handleTabs = () => setTabSelect(!tabSelect)
 
- const handleChange = (e) => {
+ const handleInput = (e) => {
   fetch(`https://www.blockchain.com/tobtc?currency=USD&value=${e.target.value.replace(',', '')}`)
    .then((res) => res.json())
    .then((data) => setValue(data))
@@ -31,6 +33,7 @@ const Widget = () => {
   getCurrent()
   // eslint-disable-next-line
  }, [])
+
  return (
   <div className='pax-app'>
    <Container fluid>
@@ -81,15 +84,8 @@ const Widget = () => {
              <label htmlFor='' className='buy-widget-right-input-title'>
               Amount you pay
              </label>
-
              <div className='buy-widget-right-input-amount'>
-              <input
-               type='text'
-               className='buy-widget-right-input-amount-picker'
-               placeholder='Any Amount'
-               onChange={handleChange}
-              />
-
+              <input type='text' className='buy-widget-right-input-amount-picker' placeholder='Any Amount' onChange={handleInput} />
               <button className='buy-widget-right-input-amount-cta btn btn-md btn-outline-primary widget-btn'>
                <div className='d-flex align-items-center text-nowrap'>
                 Any currency
@@ -110,10 +106,7 @@ const Widget = () => {
              <p className='buy-widget-right-current-help'>You can buy any fraction of a bitcoin</p>
             </div>
             <div className='buy-widget-right-search d-md-flex align-items-end'>
-             <a
-              href='/'
-              className='buy-widget-right-search-button py2 btn btn-primary btn-lg d-flex flex-column align-items-center text-uppercase w-100'
-             >
+             <a href='/' className='buy-widget-right-search-button py2 btn btn-primary btn-lg d-flex flex-column align-items-center text-uppercase w-100'>
               <div>Search for offers</div>
               <small>and get bitcoin now</small>
              </a>
@@ -169,14 +162,6 @@ const WidgetPayments = (props) => {
     <div className='buy-widget-left-payment-item-text'>{props.title}</div>
    </div>
   </div>
- )
-}
-
-const Icon = (props) => {
- return (
-  <svg viewBox='0 0 16 16' className={`icon icon-${props.name}`} fill={props.color}>
-   <use xlinkHref={`assets/sprite-paxful.svg#icon-${props.name}`} />
-  </svg>
  )
 }
 
