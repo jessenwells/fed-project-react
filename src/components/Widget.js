@@ -54,8 +54,8 @@ const Widget = () => {
              </div>
              <div className='buy-widget-left-payment d-xs-block'>
               {tabSelect
-               ? data.paymentList.slice(0, 6).map((pay, i) => <WidgetPayments title={pay[0]} icon={pay[1]} key={i} />)
-               : data.paymentList.slice(6).map((pay, i) => <WidgetPayments title={pay[0]} icon={pay[1]} key={i} />)}
+               ? data.paymentList.slice(0, 6).map((pay, i) => <WidgetPayments title={pay[1]} icon={pay[2]} key={i} />)
+               : data.paymentList.slice(6).map((pay, i) => <WidgetPayments title={pay[1]} icon={pay[2]} key={i} />)}
              </div>
              <div className='buy-widget-left-input'>
               <label htmlFor='' className='buy-widget-left-input-title'>

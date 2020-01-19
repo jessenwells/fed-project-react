@@ -1,0 +1,310 @@
+.header
+  min-width: 320px
+
+.header-placeholder
+  height: 113px
+
+.header-container
+  background: #fff
+  position: fixed
+  display: block
+  width: 100%
+  min-width: 320px
+  top: 0
+  left: 0
+  box-shadow: none
+  will-change: box-shadow
+  z-index: 10
+  .container-fluid
+    padding: 0
+  
+.header-top
+  display: flex
+  position: relative
+  align-items: center
+  z-index: 11
+  padding: 16px
+  
+.header-top-bmenu
+  margin-right: 24px
+  position: relative
+  z-index: 2
+
+button.bmenu
+  background-color: #fff
+  border: 1px solid #d8d8d8
+  border-radius: 3px
+  cursor: pointer
+  padding: 9px 0
+  position: relative
+  width: 32px
+  .bmenu-line
+    margin: 3px auto 0
+    opacity: 1
+
+button.bmenu::after, button.bmenu::before 
+  content: ''
+  position: absolute
+  width: 22px
+  top: calc(50% - 1px)
+  left: calc(50% - 11px)
+  transform: rotate(0)
+  opacity: 0
+
+button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
+  background-color: #333
+  border-radius: 2px
+  display: block
+  height: 2px
+  width: 16px
+
+.header-logo-image
+  position: relative
+  display: block
+  width: 85px
+  min-width: 85px
+  z-index: 2
+
+.header-menu
+  display: flex
+  flex-grow: 1
+  margin: 0 12px
+  opacity: 1
+  top: 0
+  ul
+    margin: 0
+    width: 100%
+
+.header-menu-item
+  margin: 0 12px
+
+
+.header-menu-item-link
+  align-items: center
+  color: #333
+  display: flex
+  justify-content: space-between
+  font-size: 14px
+  line-height: 16px
+  font-weight: 600
+  padding: 8px 0
+
+.header-menu .btn-group
+  display: flex
+
+
+.header .btn 
+  align-items: center
+  display: flex
+  padding: 7px 11px
+  border-radius: 3px
+  line-height: 1.6rem
+
+.header .dropdown-toggle
+  padding: 7px
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
+  margin-left: -1px
+  &::after
+    display: none
+
+
+.header .dropdown-menu
+  background-color: #ffffff
+  box-shadow: none
+  border: none
+  border-radius: 0
+  left: 0
+  min-width: 256px
+  position: absolute
+  top: 100% !important
+  padding: 0
+  z-index: 995
+  transform: none !important
+  pointer-events: all !important
+  margin: 0
+  opacity: 1 !important
+  display: none
+
+.header .dropdown-menu-body  
+  background: #fff
+  border: 1px solid #d8d8d8
+  border-radius: 3px
+  box-shadow: 0 16px 24px rgba(51,51,51,.08)
+  margin: 8px 0 0
+  overflow: hidden
+  padding: 8px
+  
+.dropdown-item
+  align-items: center
+  background-color: #fff
+  color: #333
+  border-radius: 3px
+  display: flex
+  font-weight: 400
+  font-size: 14px
+  line-height: 16px
+  -webkit-box-pack: justify
+  justify-content: space-between
+  padding: 16px
+  cursor: pointer
+  text-transform: none
+  .icon-wrap
+    background: #fff
+    border: 1px solid #d8d8d8
+    border-radius: 3px
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 48px
+    min-width: 48px
+  .icon-lg
+    margin-right: 16px
+
+.dropdown-menu-subtext
+  color: #626262
+  display: block
+  font-weight: 400
+  margin-top: 8px
+
+.dropdown-menu-item-wide
+  max-width: 496px
+  width: calc(48vw - 8px)
+
+
+.header-menu-profile
+  display: flex
+  flex-direction: row
+  justify-content: flex-end
+  position: relative
+  z-index: 2
+
+.header-menu-profile-account
+  display: flex
+
+.header-menu-profile-account-register
+  align-items: center
+  color: #333
+  display: flex
+  justify-content: space-between
+  font-size: 14px
+  line-height: 16px
+  font-weight: 600
+  padding: 8px 0
+  background: none
+  border: 0
+  color: #623590
+
+.header-menu-profile-account-signin
+  margin-left: 24px
+  .icon
+    margin-left: 12px
+  &.dropdown-toggle
+    border-top-left-radius: 3px
+    border-bottom-left-radius: 3px
+    margin-left: 12px
+    .icon
+      margin-left: 0
+
+.header-menu-profile-language
+  margin-left: 16px
+  order: 3
+  position: relative
+
+.dropdown-menu-language
+  display: flex
+  position: relative
+
+.profile-signin.dropdown-menu
+  min-width: 256px
+  .dropdown-item
+    justify-content: flex-start
+  .icon-md
+    margin-right: 16px
+
+.dropdown-menu-language .dropdown-menu
+  left: auto !important
+  right: 0  
+
+.dropdown-menu-language .dropdown-item
+  padding: 8px
+  align-items: center
+  justify-content: flex-start
+  min-height: 3.48rem
+  &.current
+    background-color: #f4fafd
+    color: #333
+  &::before
+    content: ''
+    display: inline-block
+    height: 12px
+    margin-right: 8px
+    width: 16px
+
+.dropdown-menu-language .dropdown-item.current:before 
+  background-image: url(/assets/icon_check.svg)
+
+.header .profile-signin.dropdown-menu
+  left: auto !important
+  right: 0
+
+.header .dropdown-menu-language-button
+  color: #333
+  background: #ffffff
+  display: flex
+  font-size: 14px
+  font-weight: 400
+  justify-content: space-between
+  line-height: 16px
+  padding: 7px 8px
+  white-space: nowrap
+  width: 100%
+  appearance: none
+  outline: none
+  box-shadow: none
+  border-radius: 3px
+  .icon-globe
+    margin-right: 0.8rem
+
+@media (min-width: 1200px)
+  .header-top-bmenu
+    display: none
+  .header-logo-image
+    width: 134px
+    min-width: 134px
+  .dropdown-menu-item
+    .item-wide
+      width: calc(34vw - 8px)
+
+@media (min-width: 992px)
+  .header-menu-profile-language
+    margin-left: 24px
+
+@media (min-width: 768px)
+  .header-top
+    padding: 24px
+  .header-logo-image
+    width: 99
+    min-width: 99px
+
+@media (min-width: 667px)
+  .header-placeholder
+    height: 80px
+  .header-container
+    border-bottom: 1px solid #d8d8d8
+
+.dropdown-menu-language .dropdown-menu
+  width: 208px
+  min-width: 208px
+
+@media (min-width: 568px)
+  .dropdown-menu-language-button .icon-arrow-down
+    margin-left: 0.8rem
+
+@media (min-width: 375px)
+  // .header .btn
+  //     padding: 7px 11px
+
+@media (any-hover: hover)
+  .header .dropdown:hover .dropdown__menu
+    display: block
