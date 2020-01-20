@@ -1,6 +1,7 @@
 .main-widget 
   background-color: #fff
   min-height: 200px
+  border-bottom: 1px solid #d8d8d8
 
 .buy-widget
   display: flex
@@ -12,6 +13,26 @@
   border-radius: 0
   border: none
 
+.widget-btn
+  align-items: center
+  border: 1px solid #00a5ef
+  border-radius: 4px
+  color: #333
+  flex-grow: 0
+  font-size: 14px
+  font-weight: 600
+  line-height: 16px
+  padding: 8px 16px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.widget-icon-center
+  position: absolute
+  top: 6px
+  right: -12px  
+
+// left column
 .buy-widget-left-title
   margin-bottom: 14px
   text-align: center
@@ -97,6 +118,7 @@
 .buy-widget-left-input
   text-align: initial
   position: relative
+  margin-bottom: 24px
 
 .buy-widget-left-input-title
   display: inline-flex
@@ -129,14 +151,7 @@
   overflow: hidden
   text-overflow: ellipsis
 
-.widget-icon-right
-  position: absolute
-  top: 6px
-  right: -12px
-
-
-// 
-
+// right column
 .buy-widget-right
   text-align: left
   display: flex
@@ -188,8 +203,15 @@
   white-space: nowrap
   text-overflow: ellipsis
 
+.buy-widget-right-input-amount-cta .icon
+  margin-left: 12px
+
+.buy-widget-right-input-amount-cta .icon-arrow-down
+  display: none
+
 .buy-widget-right-input-btc
   margin-top: 15px
+
 .buy-widget-right-input-btc-value
   position: relative
   display: flex
@@ -231,8 +253,7 @@
   small
     font-size: 10px
 
-
-
+// footer
 .buy-widget-stats-stat
   display: flex
   align-items: center
@@ -249,32 +270,16 @@
     padding-left: 60px
     text-align: left
 
-.buy-widget-right-input-amount-cta .icon
-  margin-left: 12px
-//  
-  
-
-.widget-btn
-  align-items: center
-  border: 1px solid #00a5ef
-  border-radius: 4px
-  color: #333
-  flex-grow: 0
-  font-size: 14px
-  font-weight: 600
-  line-height: 16px
-  padding: 8px 16px
-  white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
-
+// media
 @media (min-width: 1200px)
-
   .pax-widget
     margin-top: -112px
+  .buy-widget-right-input-amount-cta .icon-arrow-down
+    display: block
+  .buy-widget-right-input-amount-cta .icon-burger
+    display: none
 
 @media (min-width: 992px)
-  
   .main-widget
     min-height: 557px
     border: 1px solid #d8d8d8
@@ -298,7 +303,7 @@
     font-size: 17px
     height: auto
     &::after
-      content: " "
+      content: ''
       position: absolute
       right: 0
       width: 55px
@@ -310,7 +315,6 @@
     width: auto
 
 @media (min-width: 768px)
-
   .buy-widget-left-label 
     margin-bottom: 12px
     font-size: 17px
@@ -365,11 +369,50 @@
       font-size: 4rem  
     span
       padding-left: 0
-  // .buy-widget-right-search
-  //   margin-bottom: 24px
 
 
+@media (max-width: 991px)
+  .buy-widget-stats-stat
+      height: 40px
+      display: flex
+      align-items: center
+      margin: 5px 0
 
+@media (max-width: 767px)
+  .buy-widget-left
+    padding-top: 15px
+    border-top: 1px solid #d8d8d8
+    margin-top: 32px
+
+  .buy-widget-footer 
+    padding-top: 24px
+    padding-bottom: 24px
+
+  .buy-widget-right
+    padding-bottom: 24px
+    border-bottom: 1px solid #d8d8d8
+
+  .buy-widget-right-input-amount-cta.widget-btn
+    font-size: 12px
+    padding: 8px 12px
+
+  .buy-widget-left-input-search-cta.widget-btn
+    font-size: 12px
+
+
+@media (max-width: 666px)
+  .buy-widget-left
+    padding-top: 0
+    margin-top: 32px
+    border-top: none
+
+  .buy-widget-stats .col-sm-6
+    flex: 0 0 100%
+    max-width: 100%
+
+  .buy-widget-right
+    padding-bottom: 0
+    border-bottom: none
 
 
 

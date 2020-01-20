@@ -1,21 +1,23 @@
 import React from 'react'
 import { Dropdown, Button, ButtonGroup } from 'react-bootstrap'
 import { useMedia } from '../hooks/useMedia'
-import data from './data'
+import { useScroll } from '../hooks/useScroll'
+import data from '../data'
 import Icon from './Icon'
 
 const Header = () => {
  const winLarge = useMedia()
+ const winTop = useScroll()
 
  return (
   <div className='pax-app'>
    <header id='navbar' className='header'>
     <div className='header-placeholder'></div>
-    <div className='header-container'>
+    <div className={`header-container header-container--${winTop ? 'show' : 'hide'}`}>
      <div className='container-fluid'>
       <div className='header-top'>
        <div className='header-top-bmenu'>
-        <button className='bmenu js-mobile-menu-btn' type='button'>
+        <button className='bmenu' type='button'>
          <span className='bmenu-line mt-0'></span>
          <span className='bmenu-line'></span>
          <span className='bmenu-line'></span>
@@ -27,7 +29,7 @@ const Header = () => {
          <path d={data.logoSvg[2]} fill='#00a5ef'></path>
         </svg>
        </a>
-       <nav className='header-menu'>
+       <nav className={`header-menu header-menu--${winTop ? 'hide' : 'show'}`}>
         <ul className='list-unstyled d-flex align-items-center'>
          <li className='header-menu-item'>
           <Dropdown as={ButtonGroup}>
@@ -79,7 +81,7 @@ const Header = () => {
            </div>
           </Dropdown>
          </li>
-         <li className='header-menu-item'>
+         <li className='header-menu-item d-none d-xl-block'>
           <a href='?' className='header-menu-item-link'>
            Sell Bitcoin
           </a>
@@ -89,7 +91,7 @@ const Header = () => {
            Wallet
           </a>
          </li>
-         <li className='header-menu-item'>
+         <li className='header-menu-item d-none d-lg-block'>
           <a href='?' className='header-menu-item-link'>
            Become a Vendor
           </a>
@@ -98,7 +100,7 @@ const Header = () => {
        </nav>
        <nav className='header-menu-profile'>
         {winLarge ? <AuthBlock size='large' /> : <AuthBlock />}
-        <div className='header-menu-profile-language'>
+        <div className='header-menu-profile-language d-none d-md-block'>
          <Dropdown className='dropdown-menu-language'>
           <Dropdown.Toggle as={Button} variant='link' className='dropdown-menu-language-button'>
            <Icon name='globe' color='#848484' />

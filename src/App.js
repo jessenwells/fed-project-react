@@ -1,5 +1,5 @@
 import React from 'react'
-import MobileMenu from './components/MobileMenu'
+import Mobile from './components/Mobile'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Widget from './components/Widget'
@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 function App() {
  return (
   <div className='App'>
-   <MobileMenu />
+   <Mobile />
    <Header />
    <main>
     <Hero />

@@ -1,0 +1,102 @@
+// base
+.pax-app .btn-primary:hover 
+  background-color: #0097db
+.pax-app .btn-secondary:hover 
+  background-color: #46127b
+  
+// header 
+.header-container
+  transition: box-shadow .25s ease-in-out
+.header-container--show
+  box-shadow: 0 16px 24px rgba(51,51,51,.08)
+
+.header-logo-image
+  transition: min-width .25s ease-in-out,width .25s ease-in-out
+  will-change: min-width,width
+
+.header-menu
+  transition: top .25s ease-in-out,opacity .25s ease-in-out
+  will-change: top,opacity
+.header-menu--hide
+  top: 0
+
+
+.dropdown-menu-item
+  transition: background-color .25s ease-in-out,color .25s ease-in-out
+  will-change: background-color,color
+
+.header .btn
+  transition: background-color .25s ease-in-out,box-shadow 125ms ease-in-out
+  will-change: background-color,box-shadow
+
+.header-menu-item-link
+  transition: background-color .25s ease-in-out,color .25s ease-in-out
+  will-change: background-color,color
+.header-menu-item-link:hover
+  color: #623590
+  text-decoration: none
+
+.dropdown-menu-language.show .dropdown-menu.show
+  display: block
+.dropdown-menu--show:hover .dropdown-menu
+  display: flex
+.dropdown-menu--show:hover .profile-signin.dropdown-menu
+  display: block
+
+.dropdown-menu-language .dropdown-toggle .icon
+  transition: transform .25s ease-in-out,fill .25s ease-in-out
+  will-change: transform,fill
+.dropdown-menu-language.show .dropdown-toggle .icon
+  fill: #00a5ef
+
+.dropdown-menu-language.show .dropdown-toggle
+  border-color: #00a5ef
+.dropdown-menu-language .dropdown-toggle .icon-arrow-down
+  transform: rotate(0deg)
+.dropdown-menu-language.show .dropdown-toggle .icon-arrow-down
+  transform: rotate(180deg)
+
+.header-menu-profile-account-register
+  transition: background-color .25s ease-in-out,color .25s ease-in-out
+  will-change: background-color,color
+.header-menu-profile-account-register:hover
+  color: #333333
+
+.bmenu
+  transition: border-color .25s ease-in-out,background-color .25s ease-in-out
+  &::before,&::after
+    transition: opacity .25s ease-in-out,transform .25s ease-in-out
+  &:hover
+    background-color: #f8f8f8
+  .bmenu-line
+    transition: opacity .25s ease-in-out
+
+// widget    
+  
+.buy-widget-left-tab--selected
+  font-weight: 600
+  border-bottom-color: #04b4e8
+  color: #212121
+
+.widget-btn
+  transition: background-color .25s ease-in-out,color .25s ease-in-out
+.widget-btn:hover
+  background-color: #f4fafd
+
+
+// media
+
+@media (max-width: 667px)
+  .header-menu-item-link
+    transition: background-color .25s ease-in-out,border-color .25s ease-in-out;
+    will-change: background-color,border-color;
+  .header-menu-item-link:hover
+    background-color: #f4fafd
+    color: #333333 !important
+
+
+
+
+
+
+

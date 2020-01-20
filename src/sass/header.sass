@@ -30,7 +30,8 @@
   position: relative
   z-index: 2
 
-button.bmenu
+// burger menu
+.bmenu
   background-color: #fff
   border: 1px solid #d8d8d8
   border-radius: 3px
@@ -41,23 +42,27 @@ button.bmenu
   .bmenu-line
     margin: 3px auto 0
     opacity: 1
+  &::after,
+  &::before 
+    content: ''
+    position: absolute
+    width: 22px
+    top: calc(50% - 1px)
+    left: calc(50% - 11px)
+    transform: rotate(0)
+    opacity: 0
 
-button.bmenu::after, button.bmenu::before 
-  content: ''
-  position: absolute
-  width: 22px
-  top: calc(50% - 1px)
-  left: calc(50% - 11px)
-  transform: rotate(0)
-  opacity: 0
-
-button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
+.bmenu:after,
+.bmenu:before,
+.bmenu .bmenu-line
   background-color: #333
   border-radius: 2px
   display: block
   height: 2px
   width: 16px
 
+
+// logo
 .header-logo-image
   position: relative
   display: block
@@ -65,6 +70,8 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
   min-width: 85px
   z-index: 2
 
+
+// left nav
 .header-menu
   display: flex
   flex-grow: 1
@@ -78,7 +85,6 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
 .header-menu-item
   margin: 0 12px
 
-
 .header-menu-item-link
   align-items: center
   color: #333
@@ -89,10 +95,6 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
   font-weight: 600
   padding: 8px 0
 
-.header-menu .btn-group
-  display: flex
-
-
 .header .btn 
   align-items: center
   display: flex
@@ -100,15 +102,11 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
   border-radius: 3px
   line-height: 1.6rem
 
-.header .dropdown-toggle
-  padding: 7px
-  border-top-left-radius: 0
-  border-bottom-left-radius: 0
-  margin-left: -1px
-  &::after
-    display: none
+.header-menu .btn-group
+  display: flex
 
 
+// dropdowns
 .header .dropdown-menu
   background-color: #ffffff
   box-shadow: none
@@ -171,7 +169,15 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
   max-width: 496px
   width: calc(48vw - 8px)
 
+.header .dropdown-toggle
+  padding: 7px
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
+  margin-left: -1px
+  &::after
+    display: none
 
+// right nav
 .header-menu-profile
   display: flex
   flex-direction: row
@@ -211,6 +217,7 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
   order: 3
   position: relative
 
+// dropdowns
 .dropdown-menu-language
   display: flex
   position: relative
@@ -243,7 +250,7 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
 
 .dropdown-menu-language .dropdown-item.current:before 
   background-image: url(/assets/icon_check.svg)
-
+ 
 .header .profile-signin.dropdown-menu
   left: auto !important
   right: 0
@@ -266,6 +273,7 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
   .icon-globe
     margin-right: 0.8rem
 
+// media
 @media (min-width: 1200px)
   .header-top-bmenu
     display: none
@@ -292,19 +300,67 @@ button.bmenu:after, button.bmenu:before, button.bmenu .bmenu-line
     height: 80px
   .header-container
     border-bottom: 1px solid #d8d8d8
-
-.dropdown-menu-language .dropdown-menu
-  width: 208px
-  min-width: 208px
+  .dropdown-menu-language .dropdown-menu
+    width: 208px
+    min-width: 208px
 
 @media (min-width: 568px)
   .dropdown-menu-language-button .icon-arrow-down
     margin-left: 0.8rem
 
-@media (min-width: 375px)
-  // .header .btn
-  //     padding: 7px 11px
+@media (max-width: 992px)
+  .header-top-bmenu
+    margin-right: 16px
+  .header-menu
+    margin: 0 8px
 
-@media (any-hover: hover)
-  .header .dropdown:hover .dropdown__menu
-    display: block
+@media (max-width: 667px)
+  .header-menu
+    left: 16px
+    margin: 0
+    position: absolute
+    top: calc(100% + 8px)
+    width: calc(100% - 32px)
+    z-index: 0
+    ul
+      justify-content: space-between
+  .header-menu-item
+    margin: 0 0 0 8px
+    &:first-child
+      marign-left: 0
+      flex-grow: 1
+  .header-menu-item-link:last-child
+    background-color: #fff
+    border: 1px solid #00a5ef
+    border-radius: 3px
+    padding: 7px 15px
+    transition: background-color .25s ease-in-out,border-color .25s ease-in-out;
+    will-change: background-color,border-color;
+
+  .header-menu .dropdown-menu
+    width: calc(100% + 83px)
+  .header-menu .dropdown-menu-item-wide
+    width: calc(100vw - 50px)
+    justify-content: flex-start
+    max-width: 100%
+    padding: 8px
+    .icon-lg
+      margin-right: 8px
+      transform: scale(.667)
+    .icon-wrap
+      display: none
+  .header-menu-body
+    justify-content: space-between
+  .header-menu-profile
+    margin-left: auto
+
+  .header-top::after 
+    content: ''
+    background: #fff
+    border-bottom: 1px solid #d8d8d8
+    position: absolute
+    height: 100%
+    width: 100%
+    left: 0
+    top: 0
+    z-index: 1
