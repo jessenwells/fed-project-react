@@ -8,7 +8,7 @@
   transition: visibility 350ms ease-in-out
   will-change: visibility
   width: 100%
-  z-index: 1010
+  z-index: 10
 
 .mobile-menu-container
   bottom: 0
@@ -38,14 +38,29 @@
   width: 100%
   z-index: 0
 
-.mobile-menu-layout--visible
-  visibility: visible
+// temp
+.mobile-menu-container
+  display: flex
+  align-items: center
+  justify-content: center
+  h1
+    color: #623590
 
-.mobile-menu-container--visible
-  left: 0
-  transition-delay: 175ms
+// media
+@media (min-width: 1200px)
+  .mobile-menu-layout--show
+    visibility: hidden
+  .mobile-menu-container--show
+    visibility: -100%
+    transition-delay: 0ms
+  .mobile-menu-layout--show
+    visibility: hidden
+    opacity: 0
 
-.mobile-menu-backdrop--visible
-  opacity: 1
-  visibility: visible
-  transition-delay: 0ms
+@media (min-width: 768px)
+  .mobile-menu-layout
+    top: 80px
+
+@media (max-width: 767px)
+  .mobile-menu-layout
+    top: 64px

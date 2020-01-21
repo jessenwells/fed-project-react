@@ -5,19 +5,19 @@ import { useScroll } from '../hooks/useScroll'
 import data from '../data'
 import Icon from './Icon'
 
-const Header = () => {
+const Header = ({handleMobile, mobileOpen}) => {
  const winLarge = useMedia()
  const winTop = useScroll()
 
  return (
   <div className='pax-app'>
-   <header id='navbar' className='header'>
+   <header id='navbar' className={`header mobile--${mobileOpen ? 'open' : 'close'}`}>
     <div className='header-placeholder'></div>
     <div className={`header-container header-container--${winTop ? 'show' : 'hide'}`}>
      <div className='container-fluid'>
       <div className='header-top'>
        <div className='header-top-bmenu'>
-        <button className='bmenu' type='button'>
+        <button className={`bmenu bmenu--${mobileOpen ? 'show' : 'hide'}`} type='button' onClick={handleMobile}>
          <span className='bmenu-line mt-0'></span>
          <span className='bmenu-line'></span>
          <span className='bmenu-line'></span>
@@ -40,7 +40,7 @@ const Header = () => {
             </Dropdown.Toggle>
             <Dropdown.Menu show={true}>
              <ul className='dropdown-menu-body list-unstyled'>
-              <li className='d-block'>
+              <li className='d-block d-xl-none'>
                <Dropdown.Item as='a' className='dropdown-menu-item-wide'>
                 <Icon lg name={'buyIcon'} />
                 <span className='pr-2'>
@@ -99,7 +99,7 @@ const Header = () => {
         </ul>
        </nav>
        <nav className='header-menu-profile'>
-        {winLarge ? <AuthBlock size='large' /> : <AuthBlock />}
+        {winLarge ? <AuthBlock large={true} /> : <AuthBlock />}
         <div className='header-menu-profile-language d-none d-md-block'>
          <Dropdown className='dropdown-menu-language'>
           <Dropdown.Toggle as={Button} variant='link' className='dropdown-menu-language-button'>
@@ -129,8 +129,8 @@ const Header = () => {
  )
 }
 
-const AuthBlock = (props) =>
- props.size ? (
+const AuthBlock = (props) => {
+ return props.large ? (
   <div className='header-menu-profile-account'>
    <a href='?' className='header-menu-profile-account-register'>
     Create account
@@ -170,5 +170,6 @@ const AuthBlock = (props) =>
    </Dropdown>
   </div>
  )
+}
 
 export default Header

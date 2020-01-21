@@ -12,8 +12,7 @@ const Hero = () => {
         <h1 className='display-2'>Welcome to Paxful</h1>
         <p className='mb-0'>
          <strong>Join the peer-to-peer finance revolution.</strong>
-         The Paxful Marketplace is here to radically transform the way you spend money. Use hundreds of different payment methods
-         to buy and sell bitcoin.
+         The Paxful Marketplace is here to radically transform the way you spend money. Use hundreds of different payment methods to buy and sell bitcoin.
         </p>
        </Col>
        <Col className='col-3 mb-3 mb-md-0 mx-auto text-md-right'>

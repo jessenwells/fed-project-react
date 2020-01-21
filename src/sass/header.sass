@@ -42,8 +42,9 @@
   .bmenu-line
     margin: 3px auto 0
     opacity: 1
-  &::after,
-  &::before 
+    width: 16px
+  &:after,
+  &:before 
     content: ''
     position: absolute
     width: 22px
@@ -51,6 +52,7 @@
     left: calc(50% - 11px)
     transform: rotate(0)
     opacity: 0
+    width: 22px
 
 .bmenu:after,
 .bmenu:before,
@@ -59,7 +61,12 @@
   border-radius: 2px
   display: block
   height: 2px
-  width: 16px
+
+.bmenu:active,
+.bmenu:focus,
+.bmenu:active:focus
+  box-shadow: none
+  outline: none
 
 
 // logo

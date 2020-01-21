@@ -77,10 +77,7 @@ const LeftColumn = ({ tabSelect, handleTabs }) => {
      </div>
     </div>
     <div className='buy-widget-left-payment d-none d-xs-flex'>
-     { tabSelect 
-      ? tabA.map((pay, i) => <WidgetPayments title={pay[1]} icon={pay[2]} key={i} />) 
-      : tabB.map((pay, i) => <WidgetPayments title={pay[1]} icon={pay[2]} key={i} />)
-     }
+     {tabSelect ? tabA.map((pay, i) => <WidgetPayments title={pay[1]} icon={pay[2]} key={i} />) : tabB.map((pay, i) => <WidgetPayments title={pay[1]} icon={pay[2]} key={i} />)}
     </div>
     <div className='buy-widget-left-input'>
      <label htmlFor='' className='buy-widget-left-input-title'>
@@ -99,94 +96,88 @@ const LeftColumn = ({ tabSelect, handleTabs }) => {
  )
 }
 
-const RightColumn = ({ handleInput, value, current }) => {
- return (
-  <Col lg={6} className='buy-widget-right'>
-   <div className='buy-widget-right-title md-hidden'>
-    Receive
-    <img src='assets/widget_BTC_icon.svg' alt='Bitcoin icon' />
-    bitcoin
-   </div>
-   <div className='buy-widget-right-input'>
-    <label htmlFor='' className='buy-widget-right-input-title'>
-     Amount you pay
-    </label>
-    <div className='buy-widget-right-input-amount'>
-     <input type='text' className='buy-widget-right-input-amount-picker' placeholder='Any Amount' onChange={handleInput} />
-     <button className='buy-widget-right-input-amount-cta btn btn-md btn-outline-primary widget-btn'>
-      <div className='d-flex align-items-center text-nowrap'>
-       Any currency
-       <Icon name={'arrow-down'} color={'#00a5ef'} />
-       <Icon name={'burger'} color={'#00a5ef'} />
-      </div>
-     </button>
-    </div>
-    <div className='buy-widget-right-input-btc md-hidden'>
-     <label htmlFor='' className='buy-widget-right-input-title'>
-      Amount you receive in BTC
-     </label>
-     <input type='text' className='buy-widget-right-input-btc-value' placeholder={value} />
-    </div>
-    <p className='buy-widget-right-current md-hidden'>
-     Current market price of bitcoin:
-     <span>{current}</span>
-    </p>
-    <p className='buy-widget-right-current-help md-hidden'>You can buy any fraction of a bitcoin</p>
-   </div>
-   <div className='buy-widget-right-search d-md-flex align-items-end'>
-    <a href='/' className='buy-widget-right-search-button py2 btn btn-primary btn-lg d-flex flex-column align-items-center text-uppercase w-100'>
-     <div>Search for offers</div>
-     <small>and get bitcoin now</small>
-    </a>
-   </div>
-  </Col>
- )
-}
-
-const Footer = () => {
- return (
-  <footer className='buy-widget-footer px-5'>
-   <div className='buy-widget-stats'>
-    <Row>
-     <Col sm={6} md={3}>
-      <div className='buy-widget-stats-stat'>
-       <img src='assets/il_shield_lg_1.svg' alt='' />
-       <span>Secured by escrow</span>
-      </div>
-     </Col>
-     <Col sm={6} md={3}>
-      <div className='buy-widget-stats-stat'>
-       <img src='assets/il_customers_lg_1.svg' alt='' />
-       <span>3 Million happy customers</span>
-      </div>
-     </Col>
-     <Col sm={6} md={3}>
-      <div className='buy-widget-stats-stat'>
-       <img src='assets/il_bitcoinStar_lg_1.svg' alt='' />
-       <span>Thousands of trusted offers</span>
-      </div>
-     </Col>
-     <Col sm={6} md={3}>
-      <div className='buy-widget-stats-stat'>
-       <img src='assets/il_bitcoincoin_lg_1.svg' alt='' />
-       <span>Billions in global volume</span>
-      </div>
-     </Col>
-    </Row>
-   </div>
-  </footer>
- )
-}
-
-const WidgetPayments = (props) => {
- return (
-  <div className='buy-widget-left-payment-item'>
-   <img src={`/assets/${props.icon}.svg`} alt={props.title} />
-   <div className='buy-widget-left-payment-item-textblock'>
-    <div className='buy-widget-left-payment-item-text'>{props.title}</div>
-   </div>
+const RightColumn = ({ handleInput, value, current }) => (
+ <Col lg={6} className='buy-widget-right'>
+  <div className='buy-widget-right-title md-hidden'>
+   Receive
+   <img src='assets/widget_BTC_icon.svg' alt='Bitcoin icon' />
+   bitcoin
   </div>
- )
-}
+  <div className='buy-widget-right-input'>
+   <label htmlFor='' className='buy-widget-right-input-title'>
+    Amount you pay
+   </label>
+   <div className='buy-widget-right-input-amount'>
+    <input type='text' className='buy-widget-right-input-amount-picker' placeholder='Any Amount' onChange={handleInput} />
+    <button className='buy-widget-right-input-amount-cta btn btn-md btn-outline-primary widget-btn'>
+     <div className='d-flex align-items-center text-nowrap'>
+      Any currency
+      <Icon name={'arrow-down'} color={'#00a5ef'} />
+      <Icon name={'burger'} color={'#00a5ef'} />
+     </div>
+    </button>
+   </div>
+   <div className='buy-widget-right-input-btc md-hidden'>
+    <label htmlFor='' className='buy-widget-right-input-title'>
+     Amount you receive in BTC
+    </label>
+    <input type='text' className='buy-widget-right-input-btc-value' placeholder={value} />
+   </div>
+   <p className='buy-widget-right-current md-hidden'>
+    Current market price of bitcoin:
+    <span>{current}</span>
+   </p>
+   <p className='buy-widget-right-current-help md-hidden'>You can buy any fraction of a bitcoin</p>
+  </div>
+  <div className='buy-widget-right-search d-md-flex align-items-end'>
+   <a href='/' className='buy-widget-right-search-button py2 btn btn-primary btn-lg d-flex flex-column align-items-center text-uppercase w-100'>
+    <div>Search for offers</div>
+    <small>and get bitcoin now</small>
+   </a>
+  </div>
+ </Col>
+)
+
+const Footer = () => (
+ <footer className='buy-widget-footer px-5'>
+  <div className='buy-widget-stats'>
+   <Row>
+    <Col sm={6} md={3}>
+     <div className='buy-widget-stats-stat'>
+      <img src='assets/il_shield_lg_1.svg' alt='' />
+      <span>Secured by escrow</span>
+     </div>
+    </Col>
+    <Col sm={6} md={3}>
+     <div className='buy-widget-stats-stat'>
+      <img src='assets/il_customers_lg_1.svg' alt='' />
+      <span>3 Million happy customers</span>
+     </div>
+    </Col>
+    <Col sm={6} md={3}>
+     <div className='buy-widget-stats-stat'>
+      <img src='assets/il_bitcoinStar_lg_1.svg' alt='' />
+      <span>Thousands of trusted offers</span>
+     </div>
+    </Col>
+    <Col sm={6} md={3}>
+     <div className='buy-widget-stats-stat'>
+      <img src='assets/il_bitcoincoin_lg_1.svg' alt='' />
+      <span>Billions in global volume</span>
+     </div>
+    </Col>
+   </Row>
+  </div>
+ </footer>
+)
+
+const WidgetPayments = (props) => (
+ <div className='buy-widget-left-payment-item'>
+  <img src={`/assets/${props.icon}.svg`} alt={props.title} />
+  <div className='buy-widget-left-payment-item-textblock'>
+   <div className='buy-widget-left-payment-item-text'>{props.title}</div>
+  </div>
+ </div>
+)
 
 export default Widget
