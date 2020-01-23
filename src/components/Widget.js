@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
-import data from '../data'
+import data from '../store/data'
 import Icon from './Icon'
 
 const Widget = () => {
@@ -36,27 +36,25 @@ const Widget = () => {
  }, [])
 
  return (
-  <div className='pax-app'>
+  <section className='pax-widget mb-6'>
    <Container fluid>
-    <section className='pax-widget mb-6'>
-     <Row className='justify-content-center'>
-      <Col lg={10}>
-       <div className='main-widget pt-lg-5'>
-        <div className='buy-widget'>
-         <div className='px-lg-5 px-0'>
-          <Row>
-           <LeftColumn tabSelect={tabSelect} handleTabs={handleTabs} />
-           <RightColumn handleInput={handleInput} value={value} current={current} />
-          </Row>
-         </div>
-         <Footer />
+    <Row className='justify-content-center'>
+     <Col lg={10}>
+      <div className='main-widget pt-lg-5'>
+       <div className='buy-widget'>
+        <div className='px-lg-5 px-0'>
+         <Row>
+          <LeftColumn tabSelect={tabSelect} handleTabs={handleTabs} />
+          <RightColumn handleInput={handleInput} value={value} current={current} />
+         </Row>
         </div>
+        <Footer />
        </div>
-      </Col>
-     </Row>
-    </section>
+      </div>
+     </Col>
+    </Row>
    </Container>
-  </div>
+  </section>
  )
 }
 

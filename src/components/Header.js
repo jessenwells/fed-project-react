@@ -2,7 +2,7 @@ import React from 'react'
 import { Dropdown, Button, ButtonGroup } from 'react-bootstrap'
 import { useMedia } from '../hooks/useMedia'
 import { useScroll } from '../hooks/useScroll'
-import data from '../data'
+import data from '../store/data'
 import Icon from './Icon'
 
 const Header = ({handleMobile, mobileOpen}) => {
@@ -10,7 +10,6 @@ const Header = ({handleMobile, mobileOpen}) => {
  const winTop = useScroll()
 
  return (
-  <div className='pax-app'>
    <header id='navbar' className={`header mobile--${mobileOpen ? 'open' : 'close'}`}>
     <div className='header-placeholder'></div>
     <div className={`header-container header-container--${winTop ? 'show' : 'hide'}`}>
@@ -44,8 +43,8 @@ const Header = ({handleMobile, mobileOpen}) => {
                <Dropdown.Item as='a' className='dropdown-menu-item-wide'>
                 <Icon lg name={'buyIcon'} />
                 <span className='pr-2'>
-                 <strong>Sell Bitcoin</strong>
-                 <span className='dropdown-menu-subtext'>Sell and spend your bitcoin</span>
+                 <strong>Buy Bitcoin</strong>
+                 <span className='dropdown-menu-subtext'>Search for offers to buy bitcoin</span>
                 </span>
                 <span className='icon-wrap ml-auto'>
                  <Icon name='arrow-right' color='#a9a9a9' />
@@ -68,8 +67,8 @@ const Header = ({handleMobile, mobileOpen}) => {
                <Dropdown.Item as='a' className='dropdown-menu-item-wide'>
                 <Icon lg name={'createOfferIcon'} />
                 <span className='pr-2'>
-                 <strong>Sell Bitcoin</strong>
-                 <span className='dropdown-menu-subtext'>Sell and spend your bitcoin</span>
+                 <strong>Create an Offer</strong>
+                 <span className='dropdown-menu-subtext'>Set your own offer terms</span>
                 </span>
                 <span className='icon-wrap ml-auto'>
                  <Icon name='arrow-right' color='#a9a9a9' />
@@ -125,7 +124,6 @@ const Header = ({handleMobile, mobileOpen}) => {
      </div>
     </div>
    </header>
-  </div>
  )
 }
 

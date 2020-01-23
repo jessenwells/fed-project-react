@@ -22,7 +22,7 @@ a:hover
   text-decoration: none
 
 // app
-.pax-app
+.App
   .container-fluid
     max-width: 1344px
     padding: 0 16px
@@ -129,12 +129,12 @@ a:hover
 
 // media
 @media (min-width: 1200px)
-  .pax-app
+  .App
     .display-2 
       font-size: 48px
 
 @media (min-width: 768px)
-  .pax-app
+  .App
     .container-fluid,
     &.container-fluid
       padding: 0 24px
@@ -146,14 +146,17 @@ a:hover
     .mt-md-5,
     .my-md-5
       margin-top: 3.2rem !important
+    .mb-md-0,
+    .my-md-0
+      margin-bottom: 0 !important
 
 @media (min-width: 667px)
-  .pax-app
+  .App
     #navbar
       align-items: center
 
 @media (min-width: 568px)
-  .pax-app
+  .App
     #navbar 
       flex-direction: row
     .d-xs-block
@@ -164,9 +167,13 @@ a:hover
 @media (max-width: 991px)
   .md-hidden
     display: none
+    
+@media (max-width: 800px)
+  .App .display-2
+      font-size: 32px
 
 @media (max-width: 600px)
-  .pax-app
+  .App
     .display-2
       font-size: 24px
 

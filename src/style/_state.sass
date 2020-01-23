@@ -1,9 +1,9 @@
 // state changes & animations
   
 // base
-.pax-app .btn-primary:hover 
+.App .btn-primary:hover 
   background-color: #0097db
-.pax-app .btn-secondary:hover 
+.App .btn-secondary:hover 
   background-color: #46127b
   
 // header 
@@ -98,12 +98,10 @@
   background-color: #f4fafd
 
 // mobile
-.mobile-menu-layout
-  transition: visibility 350ms ease-in-out
+.mobile-menu
   will-change: visibility
 
 .mobile-menu-container
-  transition: left 350ms ease-in-out
   transition-delay: 0ms
   will-change: left
 
@@ -112,7 +110,11 @@
   transition-delay: 350ms
   will-change: opacity, visibility
 
-.mobile-menu-layout--show
+.mobile-nav-item
+  transition: background-color .25s ease-in-out,color .25s ease-in-out
+  will-change: background-color,color  
+
+.mobile-menu--show
   visibility: visible
 
 .mobile-menu-container--show
@@ -123,6 +125,23 @@
   transition-delay: 0ms
   visibility: visible
   opacity: 1
+
+.mobile-nav-right-item
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out 
+.mobile-nav-right-item:hover
+  color: #623590
+  .icon
+    fill: #623590
+    
+.mobile-nav-item
+  &.active
+    background-color: #F4FAFD
+    border-color: #F4FAFD
+    color: #333
+  &:hover
+    background-color: #f8f8f8
+    color: #333
+    text-decoration: none
 
 // media
 @media (max-width: 667px)

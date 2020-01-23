@@ -3,8 +3,7 @@ import { Container, Col, Row } from 'react-bootstrap'
 
 const Hero = () => {
  return (
-  <div className='pax-app'>
-   <section className='pax-hero pb-md-5 pt-xl-5 mt-3 mt-md-5'>
+   <section className='pax-hero'>
     <Container fluid>
      <Col lg={10} className='mx-auto px-0'>
       <Row className='row justify-content-end flex-column-reverse flex-md-row'>
@@ -22,7 +21,6 @@ const Hero = () => {
      </Col>
     </Container>
    </section>
-  </div>
  )
 }
 
