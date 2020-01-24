@@ -99,7 +99,9 @@
 
 // mobile
 .mobile-menu
+  transition: visibility 350ms ease-in-out
   will-change: visibility
+  visibility: hidden
 
 .mobile-menu-container
   transition: left 350ms ease-in-out
@@ -110,6 +112,7 @@
   transition: opacity 350ms ease-in-out, visibility 350ms ease-in-out
   transition-delay: 350ms
   will-change: opacity, visibility
+  visibility: hidden
 
 .mobile-nav-item
   transition: background-color .25s ease-in-out,color .25s ease-in-out
