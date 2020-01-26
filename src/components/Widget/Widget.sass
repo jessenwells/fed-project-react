@@ -1,34 +1,36 @@
 @import style/_color
-
 // main  
+.widget-section
+  margin-bottom: 4.8rem
+
 .widget-container
-  background-color: $color-background
   min-height: 200px
   border-bottom: 1px solid $color-border-light
+  background-color: $color-background
 
 .widget
   display: flex
   flex-direction: column
-  color: $color-text-dark
-  text-align: center
   padding: 0
-  background-color: $color-background
-  border-radius: 0
+  text-align: center
+  color: $color-text-dark
   border: none
+  border-radius: 0
+  background-color: $color-background
 
 .widget-btn
   align-items: center
-  border: 1px solid $color-primary
-  border-radius: 4px
-  color: $color-text-dark
   flex-grow: 0
+  padding: 8px 16px
   font-size: 14px
   font-weight: 600
   line-height: 16px
-  padding: 8px 16px
+  border: 1px solid $color-primary
+  border-radius: 4px
+  color: $color-text-dark
+  text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
-  text-overflow: ellipsis
 
 .widget-icon-center
   position: absolute
@@ -37,16 +39,16 @@
 
 // left column
 .widget-left-title
+  position: relative
+  height: 44px
   margin-bottom: 14px
-  text-align: center
   font-size: 14px
   font-weight: 700
-  height: 44px
   line-height: 44px
+  text-align: center
+  text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
-  text-overflow: ellipsis
-  position: relative
 
 .widget-left-tabs
   display: flex
@@ -54,155 +56,153 @@
   align-items: center
 
 .widget-left-tab
-  display: flex
-  flex-direction: column
-  justify-content: center
   position: relative
-  text-align: center
+  display: flex
+  justify-content: center
+  flex-direction: column
   width: 50%
   height: 46px
+  padding: 1rem
   color: $color-text-light
   cursor: pointer
-  text-transform: uppercase
   font-size: 1.2rem
   font-weight: 600
   line-height: 12px
-  padding: 1rem
+  text-align: center
+  text-transform: uppercase
   border-bottom: 2px solid $color-border-light
   border-radius: 0
-  transition: border-bottom-color 0.4s
 
 .widget-left-payments
   display: flex
   flex-wrap: wrap
+  min-height: 200px
   margin: 10px 0
   font-size: 12px
-  min-height: 200px
 
 .widget-left-payments-item
-  width: 33.3%
-  height: 100px
   display: flex
   flex-direction: column
   align-items: center
-  background-color: transparent
-  border: 2px solid transparent
-  font-size: 12px
-  line-height: 14px
-  font-weight: 400
-  text-align: center
+  width: 33.3%
+  height: 100px
   padding: 20px
   padding-bottom: 2px
+  border: 2px solid transparent
   border-radius: 4px
+  font-size: 12px
+  font-weight: 400
+  line-height: 14px
+  text-align: center
   color: #888888
+  background-color: transparent
   cursor: pointer
   img
     width: 33px
 
 .widget-left-payments-item-textblock
   display: flex
-  flex-direction: column
   justify-content: center
   align-items: center
+  flex-direction: column
 
 .widget-left-payments-item-text
-  margin-top: 0.2rem
   position: relative
-  overflow: hidden
   display: block
-  padding-bottom: 0.3rem
   max-height: 49.7px
+  margin-top: 0.2rem
+  padding-bottom: 0.3rem
   font-size: 13px
-  color: $color-text-light
   line-height: 1.3
+  color: $color-text-light
   word-break: break-word
   text-overflow: ellipsis
+  overflow: hidden
 
 .widget-left-input
-  text-align: initial
   position: relative
   margin-bottom: 24px
-
+  text-align: initial
+  
 .widget-left-input-title
   display: inline-flex
+  margin-bottom: 8px
   font-size: 14px
   font-weight: 600
-  margin-bottom: 8px
-  text-align: lef
+  text-align: left
 
 .widget-left-input-search
-  background-color: $color-background
-  border: 1px solid $color-border-light
-  border-radius: 4px
+  position: relative
   display: flex
+  justify-content: space-between
   flex-direction: row
   height: 48px
-  justify-content: space-between
   padding: 7px
+  border: 1px solid $color-border-light
+  border-radius: 4px
+  background-color: $color-background
   text-decoration: none
-  position: relative
   cursor: pointer
 
 .widget-left-input-search-text
-  background: none
   flex-grow: 1
+  padding: 9px
   font-size: 14px
   line-height: 16px
-  padding: 9px
   color: $color-text-dark
+  background: none
+  text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
-  text-overflow: ellipsis
 
 // right column
 .widget-right
-  text-align: left
   display: flex
   flex-direction: column
+  text-align: left
 
 .widget-right-title
+  position: relative
+  height: 44px
   margin-bottom: 14px
-  text-align: center
   font-size: 14px
   font-weight: 700
-  height: 44px
   line-height: 44px
+  text-align: center
   white-space: nowrap
   text-overflow: ellipsis
-  position: relative
   img
     width: 44px
     margin: 0 4px
     
 .widget-right-input-title
-  text-align: left
   display: inline-flex
+  margin-bottom: 8px
+  text-align: left
   font-size: 14px
   font-weight: 600
-  margin-bottom: 8px
 
 .widget-right-input-amount
   position: relative
   display: flex
-  border: 1px solid $color-border-light
   justify-content: space-between
-  border-radius: 4px
-  box-sizing: border-box
-  display: flex
   height: 48px
   padding: 7px
+  border: 1px solid $color-border-light
+  border-radius: 4px
+  box-sizing: border-box
 
 .widget-right-input-amount-picker
-  background: none
-  border: 0
-  box-shadow: none
-  color: $color-text-dark
   flex-grow: 1
+  padding: 5px 9px
+  border: 0
   font-size: 14px
   line-height: 24px
+  color: $color-text-dark
+  background: none
+  box-shadow: none
   outline: 0
   overflow: hidden
-  padding: 5px 9px
   white-space: nowrap
   text-overflow: ellipsis
 
@@ -218,29 +218,28 @@
 .widget-right-input-btc--value
   position: relative
   display: flex
-  appearance: none
-  outline: none
-  border: 1px solid $color-border-light
   justify-content: space-between
-  border-radius: 4px
-  box-sizing: border-box
-  display: flex
+  width: 100%
   height: 48px
   padding: 7px
-  width: 100%
+  border: 1px solid $color-border-light
+  border-radius: 4px
+  box-sizing: border-box
+  appearance: none
+  outline: none
 
 .widget-right-current
   margin-top: 16px
+  margin-bottom: 0
   font-size: 12px
   text-align: center
   color: $color-text-light
-  margin-bottom: 0
   span
+    margin-left: 4px
     font-weight: 700
     font-size: 1.8rem
     line-height: 2.4rem
     color: $color-text-dark
-    margin-left: 4px
 
 .widget-right-current-help
   margin-top: .3rem
@@ -251,8 +250,8 @@
   color: $color-text-light
 
 .widget-right-search
-  margin-top: 24px
   height: 100%
+  margin-top: 24px
   small
     font-size: 10px
 
@@ -266,19 +265,21 @@
     top: 5px
     left: 0
   span
-    font-size: 11px
-    line-height: 13px
-    font-weight: 600
-    text-transform: uppercase
     padding-left: 60px
+    font-size: 11px
+    font-weight: 600
+    line-height: 13px
     text-align: left
+    text-transform: uppercase
 
 // media
 @media (min-width: 1200px)
   .widget-section
     margin-top: -112px
+
   .widget-right-input-amount-cta .icon-arrow-down
     display: block
+
   .widget-right-input-amount-cta .icon-burger
     display: none
 
@@ -300,17 +301,17 @@
     text-align: initial
 
   .widget-left-title
-    padding-left: 23px
-    text-align: left
-    margin-bottom: 12px
-    font-size: 17px
     height: auto
+    margin-bottom: 12px
+    padding-left: 23px
+    font-size: 17px
+    text-align: left
     &::after
       content: ''
       position: absolute
-      right: 0
       width: 55px
       height: 40px
+      right: 0
       background-image: -webkit-gradient(linear,left top,right top,from(hsla(0,0%,100%,0)),color-stop(70%,hsla(0,0%,100%,.7)))
       background-image: linear-gradient(90deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.7) 70%)
 
@@ -319,28 +320,28 @@
 
 @media (min-width: 768px)
   .widget-left-label 
+    height: auto
     margin-bottom: 12px
     font-size: 17px
-    height: auto
 
   .widget-left-tab
+    height: 62px
+    padding: 1rem
     font-size: 12px
     line-height: 15px
-    padding: 1rem
-    height: 62px
 
   .widget-left-input
     margin-bottom: 24px
     
   .widget-left-title
+    height: auto
     margin-bottom: 12px
     font-size: 17px
-    height: auto
 
   .widget-right-title
+    height: auto
     margin-bottom: 12px
     font-size: 17px
-    height: auto
 
   .widget-right-current
     margin-top: 12px
@@ -352,35 +353,34 @@
     margin-bottom: 24px
 
   .widget-footer
-    padding: 2rem
     width: 100%
+    padding: 32px 0
     border-top: 1px solid $color-border-light
     border-bottom: none
-    padding: 32px 0
     border-radius: 0 0 .6rem .6rem
 
   .widget-stats-stat
     img
       position: relative
-      margin-right: 1rem
       top: 0
       left: 0
+      margin-right: 1rem
       font-size: 4rem  
     span
       padding-left: 0
 
 @media (max-width: 991px)
   .widget-stats-stat
-      height: 40px
       display: flex
       align-items: center
+      height: 40px
       margin: 5px 0
 
 @media (max-width: 767px)
   .widget-left
+    margin-top: 32px
     padding-top: 15px
     border-top: 1px solid $color-border-light
-    margin-top: 32px
 
   .widget-footer 
     padding-top: 24px
@@ -391,16 +391,16 @@
     border-bottom: 1px solid $color-border-light
 
   .widget-right-input-amount-cta.widget-btn
-    font-size: 12px
     padding: 8px 12px
+    font-size: 12px
 
   .widget-left-input-search-cta.widget-btn
     font-size: 12px
 
 @media (max-width: 666px)
   .widget-left
-    padding-top: 0
     margin-top: 32px
+    padding-top: 0
     border-top: none
 
   .widget-stats .col-sm-6

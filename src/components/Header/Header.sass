@@ -1,5 +1,4 @@
 @import style/_color
-  
 // header
 .header-section
   min-width: 320px
@@ -24,30 +23,31 @@
     padding: 0
   
 .header-top
-  display: flex
   position: relative
+  display: flex
   align-items: center
-  z-index: 11
   padding: 16px
+  z-index: 11
+
   
 .header-top-bmenu
-  margin-right: 24px
   position: relative
+  margin-right: 24px
   z-index: 2
 
 // burger menu
 .bmenu
+  position: relative
+  width: 32px
+  padding: 9px 0
   background-color: $color-background
   border: 1px solid $color-border-light
   border-radius: 3px
   cursor: pointer
-  padding: 9px 0
-  position: relative
-  width: 32px
   .bmenu-line
+    width: 16px
     margin: 3px auto 0
     opacity: 1
-    width: 16px
   &:after,
   &:before 
     content: ''
@@ -57,22 +57,20 @@
     left: calc(50% - 11px)
     transform: rotate(0)
     opacity: 0
-    width: 22px
 
 .bmenu:after,
 .bmenu:before,
 .bmenu .bmenu-line
-  background-color: $color-text-dark
-  border-radius: 2px
   display: block
   height: 2px
+  background-color: $color-text-dark
+  border-radius: 2px
 
 .bmenu:active,
 .bmenu:focus,
 .bmenu:active:focus
   box-shadow: none
   outline: none
-
 
 // logo
 .header-logo-image
@@ -82,34 +80,33 @@
   min-width: 85px
   z-index: 2
 
-
 // left nav
 .header-menu
   display: flex
   flex-grow: 1
+  top: 0
   margin: 0 12px
   opacity: 1
-  top: 0
   ul
-    margin: 0
     width: 100%
+    margin: 0
 
 .header-menu-item
   margin: 0 12px
 
 .header-menu-item-link
-  align-items: center
-  color: $color-text-dark
   display: flex
   justify-content: space-between
+  align-items: center
+  padding: 8px 0
+  color: $color-text-dark
   font-size: 14px
   line-height: 16px
   font-weight: 600
-  padding: 8px 0
 
 .header-section .btn 
-  align-items: center
   display: flex
+  align-items: center
   padding: 7px 11px
   border-radius: 3px
   line-height: 1.6rem
@@ -117,122 +114,119 @@
 .header-menu .btn-group
   display: flex
 
-
 // dropdowns
 .header-section .dropdown-menu
-  background-color: $color-background
-  box-shadow: none
+  position: absolute
+  display: none
+  min-width: 256px
+  top: 100% !important
+  left: 0
+  margin: 0
+  padding: 0
   border: none
   border-radius: 0
-  left: 0
-  min-width: 256px
-  position: absolute
-  top: 100% !important
-  padding: 0
-  z-index: 995
+  background-color: $color-background
   transform: none !important
   pointer-events: all !important
-  margin: 0
+  box-shadow: none
   opacity: 1 !important
-  display: none
+  z-index: 995
 
-.header-section .dropdown-menu-body  
+.header-section .dropdown-menu-body
+  margin: 8px 0 0
+  padding: 8px
   background: $color-background
   border: 1px solid $color-border-light
   border-radius: 3px
   box-shadow: 0 16px 24px rgba(51,51,51,.08)
-  margin: 8px 0 0
   overflow: hidden
-  padding: 8px
   
 .dropdown-item
+  display: flex
+  justify-content: space-between
   align-items: center
+  padding: 16px
   background-color: $color-background
   color: $color-text-dark
   border-radius: 3px
-  display: flex
   font-weight: 400
   font-size: 14px
   line-height: 16px
-  -webkit-box-pack: justify
-  justify-content: space-between
-  padding: 16px
-  cursor: pointer
   text-transform: none
+  cursor: pointer
   .icon-wrap
-    background: $color-background
-    border: 1px solid $color-border-light
-    border-radius: 3px
     display: flex
     justify-content: center
     align-items: center
     height: 48px
     min-width: 48px
+    background: $color-background
+    border: 1px solid $color-border-light
+    border-radius: 3px
   .icon-lg
     margin-right: 16px
 
 .dropdown-menu-subtext
-  color: $color-text-light
   display: block
-  font-weight: 400
   margin-top: 8px
+  color: $color-text-light
+  font-weight: 400
 
 .dropdown-menu-item-wide
-  max-width: 496px
   width: calc(48vw - 8px)
+  max-width: 496px
 
 .header-section .dropdown-toggle
+  margin-left: -1px
   padding: 7px
   border-top-left-radius: 0
   border-bottom-left-radius: 0
-  margin-left: -1px
   &::after
     display: none
 
 // right nav
 .header-menu-profile
-  display: flex
-  flex-direction: row
-  justify-content: flex-end
   position: relative
+  display: flex
+  justify-content: flex-end
+  flex-direction: row
   z-index: 2
 
 .header-menu-profile-account
   display: flex
 
 .header-menu-profile-account-register
-  align-items: center
-  color: $color-text-dark
   display: flex
   justify-content: space-between
-  font-size: 14px
-  line-height: 16px
-  font-weight: 600
+  align-items: center
   padding: 8px 0
+  font-size: 14px
+  font-weight: 600
+  line-height: 16px
+  color: $color-secondary
   background: none
   border: 0
-  color: $color-secondary
 
 .header-menu-profile-account-signin
   margin-left: 24px
   .icon
     margin-left: 12px
   &.dropdown-toggle
+    margin-left: 12px
     border-top-left-radius: 3px
     border-bottom-left-radius: 3px
-    margin-left: 12px
     .icon
       margin-left: 0
 
 .header-menu-profile-language
+  position: relative
   margin-left: 16px
   order: 3
-  position: relative
 
 // dropdowns
 .dropdown-menu-language
-  display: flex
   position: relative
+  display: flex
 
 .profile-signin.dropdown-menu
   min-width: 256px
@@ -246,18 +240,18 @@
   right: 0  
 
 .dropdown-menu-language .dropdown-item
-  padding: 8px
-  align-items: center
   justify-content: flex-start
+  align-items: center
   min-height: 3.48rem
+  padding: 8px
   &::before
     content: ''
     display: inline-block
+    width: 16px
     height: 12px
     margin-right: 8px
-    width: 16px
   &.current, &:active
-    background-color: $color-outline-state
+    background-color: $color-primary-outline-state
     color: $color-text-dark
     &::before
       background-image: url(/assets/icon_check.svg)
@@ -267,20 +261,20 @@
   right: 0
 
 .header-section .dropdown-menu-language-button
-  color: $color-text-dark
-  background: $color-background
   display: flex
+  justify-content: space-between
+  width: 100%
+  padding: 7px 8px
   font-size: 14px
   font-weight: 400
-  justify-content: space-between
   line-height: 16px
-  padding: 7px 8px
+  color: $color-text-dark
+  border-radius: 3px
+  background: $color-background
+  box-shadow: none
   white-space: nowrap
-  width: 100%
   appearance: none
   outline: none
-  box-shadow: none
-  border-radius: 3px
   .icon-globe
     margin-right: 0.8rem
 
@@ -288,9 +282,11 @@
 @media (min-width: 1200px)
   .header-top-bmenu
     display: none
+
   .header-logo-image
     width: 134px
     min-width: 134px
+
   .dropdown-menu-item
     .item-wide
       width: calc(34vw - 8px)
@@ -302,6 +298,7 @@
 @media (min-width: 768px)
   .header-top
     padding: 24px
+
   .header-logo-image
     width: 99
     min-width: 99px
@@ -309,10 +306,13 @@
 @media (min-width: 668px)
   .header-placeholder
     height: 80px
+
   .header-section
     align-items: center
+
   .header-container
     border-bottom: 1px solid $color-border-light
+
   .dropdown-menu-language .dropdown-menu
     width: 208px
     min-width: 208px
@@ -320,43 +320,46 @@
 @media (min-width: 568px)
   .dropdown-menu-language-button .icon-arrow-down
     margin-left: 0.8rem
+
   .header-section
     flex-direction: row
     
 @media (max-width: 992px)
   .header-top-bmenu
     margin-right: 16px
+
   .header-menu
     margin: 0 8px
 
 @media (max-width: 667px)
   .header-menu
+    position: absolute
+    width: calc(100% - 32px)
+    top: calc(100% + 8px)
     left: 16px
     margin: 0
-    position: absolute
-    top: calc(100% + 8px)
-    width: calc(100% - 32px)
     z-index: 0
     ul
       justify-content: space-between
+
   .header-menu-item
     margin: 0 0 0 8px
     &:first-child
-      marign-left: 0
       flex-grow: 1
+      marign-left: 0
+
   .header-menu-item-link:last-child
-    background-color: #fff
+    padding: 7px 15px
     border: 1px solid $color-primary
     border-radius: 3px
-    padding: 7px 15px
-    transition: background-color .25s ease-in-out,border-color .25s ease-in-out;
-    will-change: background-color,border-color;
+    background-color: $color-background
 
   .header-menu .dropdown-menu
     width: calc(100% + 83px)
+
   .header-menu .dropdown-menu-item-wide
-    width: calc(100vw - 50px)
     justify-content: flex-start
+    width: calc(100vw - 50px)
     max-width: 100%
     padding: 8px
     .icon-lg
@@ -364,20 +367,22 @@
       transform: scale(.667)
     .icon-wrap
       display: none
+
   .header-menu-body
     justify-content: space-between
+
   .header-menu-profile
     margin-left: auto
 
   .header-top::after 
     content: ''
-    background: $color-background
-    border-bottom: 1px solid $color-border-light
     position: absolute
-    height: 100%
     width: 100%
-    left: 0
+    height: 100%
     top: 0
+    left: 0
+    border-bottom: 1px solid $color-border-light
+    background: $color-background
     z-index: 1
 
 

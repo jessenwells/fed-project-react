@@ -3,6 +3,7 @@ import 'style/base.sass'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Widget from './components/Widget'
+import Actions from './components/Actions'
 import Footer from './components/Footer'
 import 'style/state.sass'
 
@@ -13,6 +14,7 @@ const App = () => {
    <main>
     <Hero />
     <Widget />
+    <Actions />
    </main>
    <Footer />
   </div>

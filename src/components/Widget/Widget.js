@@ -130,7 +130,7 @@ const RightColumn = ({ handleInput, value, current }) => (
    <p className='widget-right-current-help md-hidden'>You can buy any fraction of a bitcoin</p>
   </div>
   <div className='widget-right-search d-md-flex align-items-end'>
-   <a href='/' className='py2 btn btn-primary btn-lg d-flex flex-column align-items-center text-uppercase w-100'>
+   <a href='?' className='py-2 btn btn-primary btn-lg d-flex flex-column align-items-center text-uppercase w-100'>
     <div>Search for offers</div>
     <small>and get bitcoin now</small>
    </a>

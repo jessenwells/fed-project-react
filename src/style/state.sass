@@ -3,14 +3,16 @@
 // base
 .App .btn-primary:hover 
   background-color: $color-primary-state
+
 .App .btn-secondary:hover 
   background-color: $color-secondary-state
   
 // header 
 .header-container
   transition: box-shadow .25s ease-in-out
+
 .header-container--show
-  box-shadow: 0 16px 24px $color-border
+  box-shadow: 0 16px 24px rgba(50,50,50,.1)
 
 .header-logo-image
   transition: min-width .25s ease-in-out,width .25s ease-in-out
@@ -19,6 +21,7 @@
 .header-menu
   transition: top .25s ease-in-out,opacity .25s ease-in-out
   will-change: top,opacity
+
 .header-menu--hide
   top: 0
 
@@ -33,6 +36,7 @@
 .header-menu-item-link
   transition: background-color .25s ease-in-out,color .25s ease-in-out
   will-change: background-color,color
+
 .header-menu-item-link:hover
   color: $color-secondary
   text-decoration: none
@@ -40,27 +44,33 @@
 .mobile-menu-dropdown .dropdown-menu.show,
 .dropdown-menu-language.show .dropdown-menu.show
   display: block
+
 .dropdown-menu--show:hover .dropdown-menu
   display: flex
+
 .dropdown-menu--show:hover .profile-signin.dropdown-menu
   display: block
 
 .dropdown-menu-language .dropdown-toggle .icon
   transition: transform .25s ease-in-out,fill .25s ease-in-out
   will-change: transform,fill
+
 .dropdown-menu-language.show .dropdown-toggle .icon
   fill: $color-primary
 
 .dropdown-menu-language.show .dropdown-toggle
   border-color: $color-primary
+
 .dropdown-menu-language .dropdown-toggle .icon-arrow-down
   transform: rotate(0deg)
+
 .dropdown-menu-language.show .dropdown-toggle .icon-arrow-down
   transform: rotate(180deg)
 
 .header-menu-profile-account-register
   transition: background-color .25s ease-in-out,color .25s ease-in-out
   will-change: background-color,color
+
 .header-menu-profile-account-register:hover
   color: $color-text-dark
 
@@ -86,7 +96,10 @@
       opacity: 1
       transform: rotate(45deg)
 
-// widget    
+// widget  
+.widget-left-tab
+  transition: border-bottom-color 0.4s
+  
 .widget-left-tab--selected
   font-weight: 600
   border-bottom-color: $color-primary
@@ -94,9 +107,25 @@
 
 .widget-btn
   transition: background-color .25s ease-in-out,color .25s ease-in-out
+  
 .widget-btn:hover
-  background-color: $color-outline-state
+  background-color: $color-primary-outline-state
 
+// actions
+.actions-cards-card
+  transition: background-color 125ms ease-in-out,border-color 125ms ease-in-out
+  will-change: background-color,border-color
+
+.actions-cards-card:hover
+  background-color: $color-secondary-outline-state
+  border-color: $color-secondary-outline
+  color: $color-text-dark
+  text-decoration: none
+
+.actions-tab--selected
+  color: $color-text-dark
+  border-color: $color-primary
+  
 // mobile
 .mobile-menu
   transition: visibility 350ms ease-in-out
@@ -131,7 +160,8 @@
   opacity: 1
 
 .mobile-nav-right-item
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out 
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out
+
 .mobile-nav-right-item:hover
   color: $color-secondary
   .icon
@@ -139,8 +169,8 @@
     
 .mobile-nav-item
   &.active
-    background-color: $color-outline-state
-    border-color: $color-outline-state
+    background-color: $color-primary-outline-state
+    border-color: $color-primary-outline-state
     color: $color-text-dark
   &:hover
     background-color: $color-background-light
@@ -152,8 +182,9 @@
   .header-menu-item-link
     transition: background-color .25s ease-in-out,border-color .25s ease-in-out;
     will-change: background-color,border-color;
+
   .header-menu-item-link:hover
-    background-color: $color-outline-state
+    background-color: $color-primary-outline-state
     color: $color-text-dark !important
 
 @media (min-width: 1200px)
