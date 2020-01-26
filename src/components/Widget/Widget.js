@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
-import data from '../store/data'
-import Icon from './Icon'
+import payments from 'store/data/payments'
+import Icon from '../Icon'
 
 const Widget = () => {
  const [tabSelect, setTabSelect] = useState(true)
@@ -36,12 +36,12 @@ const Widget = () => {
  }, [])
 
  return (
-  <section className='pax-widget mb-6'>
+  <section className='widget-section'>
    <Container fluid>
     <Row className='justify-content-center'>
      <Col lg={10}>
-      <div className='main-widget pt-lg-5'>
-       <div className='buy-widget'>
+      <div className='widget-container pt-lg-5'>
+       <div className='widget'>
         <div className='px-lg-5 px-0'>
          <Row>
           <LeftColumn tabSelect={tabSelect} handleTabs={handleTabs} />
@@ -59,31 +59,33 @@ const Widget = () => {
 }
 
 const LeftColumn = ({ tabSelect, handleTabs }) => {
- let tabA = data.paymentList.slice(0, 6)
- let tabB = data.paymentList.slice(6)
+ let tabA = payments.slice(0, 6)
+ let tabB = payments.slice(6)
 
  return (
-  <Col lg={6} className='buy-widget-left'>
+  <Col lg={6} className='widget-left'>
    <div className='flex-grow-1'>
-    <div className='buy-widget-left-title d-none d-xs-block'>Buy bitcoin with any payment method</div>
-    <div className='buy-widget-left-tabs mt-3 d-none d-xs-flex'>
-     <div className={`buy-widget-left-tab ${tabSelect && 'buy-widget-left-tab--selected'}`} onClick={handleTabs}>
+    <div className='widget-left-title d-none d-xs-block'>Buy bitcoin with any payment method</div>
+    <div className='widget-left-tabs mt-3 d-none d-xs-flex'>
+     <div className={`widget-left-tab ${tabSelect && 'widget-left-tab--selected'}`} onClick={handleTabs}>
       Popular payment methods in the usa
      </div>
-     <div className={`buy-widget-left-tab ${!tabSelect && 'buy-widget-left-tab--selected'}`} onClick={handleTabs}>
+     <div className={`widget-left-tab ${!tabSelect && 'widget-left-tab--selected'}`} onClick={handleTabs}>
       Popular on Paxful
      </div>
     </div>
-    <div className='buy-widget-left-payment d-none d-xs-flex'>
-     {tabSelect ? tabA.map((pay, i) => <WidgetPayments title={pay[1]} icon={pay[2]} key={i} />) : tabB.map((pay, i) => <WidgetPayments title={pay[1]} icon={pay[2]} key={i} />)}
+    <div className='widget-left-payments d-none d-xs-flex'>
+     {tabSelect
+      ? tabA.map((pay, i) => <Payments title={pay[1]} icon={pay[2]} key={i} />)
+      : tabB.map((pay, i) => <Payments title={pay[1]} icon={pay[2]} key={i} />)}
     </div>
-    <div className='buy-widget-left-input'>
-     <label htmlFor='' className='buy-widget-left-input-title'>
+    <div className='widget-left-input'>
+     <label htmlFor='' className='widget-left-input-title'>
       Buy bitcoin with
      </label>
-     <div className='buy-widget-left-input-search'>
-      <span className='buy-widget-left-input-search-text'>Any payment method</span>
-      <span className='buy-widget-left-input-search-cta widget-btn'>Show all</span>
+     <div className='widget-left-input-search'>
+      <span className='widget-left-input-search-text'>Any payment method</span>
+      <span className='widget-left-input-search-cta widget-btn'>Show all</span>
      </div>
     </div>
     <i className='widget-icon-center md-hidden'>
@@ -95,19 +97,19 @@ const LeftColumn = ({ tabSelect, handleTabs }) => {
 }
 
 const RightColumn = ({ handleInput, value, current }) => (
- <Col lg={6} className='buy-widget-right'>
-  <div className='buy-widget-right-title md-hidden'>
+ <Col lg={6} className='widget-right'>
+  <div className='widget-right-title md-hidden'>
    Receive
    <img src='assets/widget_BTC_icon.svg' alt='Bitcoin icon' />
    bitcoin
   </div>
-  <div className='buy-widget-right-input'>
-   <label htmlFor='' className='buy-widget-right-input-title'>
+  <div className='widget-right-input'>
+   <label htmlFor='' className='widget-right-input-title'>
     Amount you pay
    </label>
-   <div className='buy-widget-right-input-amount'>
-    <input type='text' className='buy-widget-right-input-amount-picker' placeholder='Any Amount' onChange={handleInput} />
-    <button className='buy-widget-right-input-amount-cta btn btn-md btn-outline-primary widget-btn'>
+   <div className='widget-right-input-amount'>
+    <input type='text' className='widget-right-input-amount-picker' placeholder='Any Amount' onChange={handleInput} />
+    <button className='widget-right-input-amount-cta btn btn-md btn-outline-primary widget-btn'>
      <div className='d-flex align-items-center text-nowrap'>
       Any currency
       <Icon name={'arrow-down'} color={'#00a5ef'} />
@@ -115,20 +117,20 @@ const RightColumn = ({ handleInput, value, current }) => (
      </div>
     </button>
    </div>
-   <div className='buy-widget-right-input-btc md-hidden'>
-    <label htmlFor='' className='buy-widget-right-input-title'>
+   <div className='widget-right-input-btc md-hidden'>
+    <label htmlFor='' className='widget-right-input-title'>
      Amount you receive in BTC
     </label>
-    <input type='text' className='buy-widget-right-input-btc-value' placeholder={value} />
+    <input type='text' className='widget-right-input-btc--value' placeholder={value} />
    </div>
-   <p className='buy-widget-right-current md-hidden'>
+   <p className='widget-right-current md-hidden'>
     Current market price of bitcoin:
     <span>{current}</span>
    </p>
-   <p className='buy-widget-right-current-help md-hidden'>You can buy any fraction of a bitcoin</p>
+   <p className='widget-right-current-help md-hidden'>You can buy any fraction of a bitcoin</p>
   </div>
-  <div className='buy-widget-right-search d-md-flex align-items-end'>
-   <a href='/' className='buy-widget-right-search-button py2 btn btn-primary btn-lg d-flex flex-column align-items-center text-uppercase w-100'>
+  <div className='widget-right-search d-md-flex align-items-end'>
+   <a href='/' className='py2 btn btn-primary btn-lg d-flex flex-column align-items-center text-uppercase w-100'>
     <div>Search for offers</div>
     <small>and get bitcoin now</small>
    </a>
@@ -137,29 +139,29 @@ const RightColumn = ({ handleInput, value, current }) => (
 )
 
 const Footer = () => (
- <footer className='buy-widget-footer px-5'>
-  <div className='buy-widget-stats'>
+ <footer className='widget-footer px-5'>
+  <div className='widget-stats'>
    <Row>
     <Col sm={6} md={3}>
-     <div className='buy-widget-stats-stat'>
+     <div className='widget-stats-stat'>
       <img src='assets/il_shield_lg_1.svg' alt='' />
       <span>Secured by escrow</span>
      </div>
     </Col>
     <Col sm={6} md={3}>
-     <div className='buy-widget-stats-stat'>
+     <div className='widget-stats-stat'>
       <img src='assets/il_customers_lg_1.svg' alt='' />
       <span>3 Million happy customers</span>
      </div>
     </Col>
     <Col sm={6} md={3}>
-     <div className='buy-widget-stats-stat'>
+     <div className='widget-stats-stat'>
       <img src='assets/il_bitcoinStar_lg_1.svg' alt='' />
       <span>Thousands of trusted offers</span>
      </div>
     </Col>
     <Col sm={6} md={3}>
-     <div className='buy-widget-stats-stat'>
+     <div className='widget-stats-stat'>
       <img src='assets/il_bitcoincoin_lg_1.svg' alt='' />
       <span>Billions in global volume</span>
      </div>
@@ -169,11 +171,11 @@ const Footer = () => (
  </footer>
 )
 
-const WidgetPayments = (props) => (
- <div className='buy-widget-left-payment-item'>
+const Payments = (props) => (
+ <div className='widget-left-payments-item'>
   <img src={`/assets/${props.icon}.svg`} alt={props.title} />
-  <div className='buy-widget-left-payment-item-textblock'>
-   <div className='buy-widget-left-payment-item-text'>{props.title}</div>
+  <div className='widget-left-payments-item-textblock'>
+   <div className='widget-left-payments-item-text'>{props.title}</div>
   </div>
  </div>
 )

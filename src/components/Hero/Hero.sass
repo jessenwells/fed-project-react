@@ -1,0 +1,38 @@
+@import style/color
+
+// hero
+.hero-section
+  margin-top: 1.6rem
+  color: $color-text-dark
+.hero-title
+  font-size: 4vw
+  font-weight: 500
+  line-height: 1.33
+
+// media
+@media (min-width: 1200px)
+  .hero-section
+    background: url(/assets/hero.svg) 50% no-repeat
+    background-size: 1320px 320px
+    color: $color-text-white
+    min-height: 320px
+    margin-top: 3.2rem
+    padding-top: 3.2rem
+  .hero-title
+    font-size: 48px
+
+@media (min-width: 768px)
+  .hero-section
+    margin-top: 3.2rem
+    padding-bottom: 3.2rem
+  .hero-title
+    font-weight: 300
+
+@media (max-width: 767px)
+  .hero-section
+    margin-top: 1.6rem
+    padding-bottom: 0
+
+@media (max-width: 800px)
+  .hero-title
+    font-size: 32px

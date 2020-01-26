@@ -1,3 +1,5 @@
+@import style/color
+
 // mobile menu
 .mobile-menu
   overflow: hidden
@@ -19,7 +21,7 @@
   z-index: 1
 
 .mobile-menu-backdrop
-  background-color: #ffffff
+  background-color: $color-background
   height: 100%
   opacity: 0
   position: fixed
@@ -38,8 +40,8 @@
 
 .mobile-nav-item
   align-items: center
-  background-color: #fff
-  color: #333
+  background-color: $color-background
+  color: $color-text-dark
   border-radius: 3px
   display: flex
   font-weight: 400
@@ -51,8 +53,8 @@
   cursor: pointer
   text-transform: none
   .icon-wrap
-    background: #fff
-    border: 1px solid #d8d8d8
+    background: $color-background
+    border: 1px solid $color-border-light
     border-radius: 3px
     display: flex
     justify-content: center
@@ -63,7 +65,7 @@
     margin-right: 16px
 
 .mobile-nav-subtext
-  color: #626262
+  color: $color-text-light
   display: block
   font-weight: 400
   margin-top: 8px
@@ -85,16 +87,16 @@
   width: 50%
 
 .mobile-nav-right-list
-  background-color: #f8f8f8
+  background-color: $color-background-light
   border-radius: 3px
-  color: #333
+  color: $color-text-dark
   margin: 0
   padding: 32px 16px 16px
 
 .mobile-nav-right-item
   align-items: center
   border-radius: 3px
-  color: #333
+  color: $color-text-dark
   display: flex
   font-family: 'Montserrat', "Open Sans", sans-serif
   font-size: 18px
@@ -127,16 +129,16 @@
       height: 12px
       margin-right: 8px
       width: 16px    
-    &.current
-      background-color: #f4fafd
-      color: #333
+    &.current, &:active
+      background-color: $color-background-light
+      color: $color-text-dark
       &::before 
         background-image: url(/assets/icon_check.svg)
   .btn
     display: flex
     width: 100%
     .icon
-      fill: #a9a9a9
+      fill: $color-text-light
     .icon-arrow-down
       margin-left: auto
     .icon-globe
@@ -198,7 +200,7 @@
     .icon-wrap
       background: #ffffff
       border: 1px solid #d8d8d8
-      fill: #848484
+      fill: $color-text-light
       margin-right: 0
       margin-left: auto
       order: 1

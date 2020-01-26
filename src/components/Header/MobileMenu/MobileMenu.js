@@ -1,20 +1,22 @@
 import React from 'react'
 import { Dropdown, Button } from 'react-bootstrap'
-import data from '../store/data'
-import Icon from './Icon'
+import languages from 'store/data/languages'
+import Icon from 'components/Icon'
 
-const MobileMenu = ({ mobileOpen }) => (
- <div className={`mobile-menu mobile-menu--${mobileOpen ? 'show' : 'hide'}`}>
-  <div className={`mobile-menu-container mobile-menu-container--${mobileOpen ? 'show' : 'hide'}`}>
-    {mobileDropdown}
-   <nav className='mobile-nav'>
-    {mobileLeft}
-    {mobileRight}
-   </nav>
+const MobileMenu = ({ mobileOpen, language, handleLang }) => {
+ return (
+  <div className={`mobile-menu mobile-menu--${mobileOpen ? 'show' : 'hide'}`}>
+   <div className={`mobile-menu-container mobile-menu-container--${mobileOpen ? 'show' : 'hide'}`}>
+    <MobileDropdown language={language} handleLang={handleLang} />
+    <nav className='mobile-nav'>
+     {mobileLeft}
+     {mobileRight}
+    </nav>
+   </div>
+   <div className={`mobile-menu-backdrop mobile-menu-backdrop--${mobileOpen ? 'show' : 'hide'}`}></div>
   </div>
-  <div className={`mobile-menu-backdrop mobile-menu-backdrop--${mobileOpen ? 'show' : 'hide'}`}></div>
- </div>
-)
+ )
+}
 
 const mobileLeft = (
  <ul className='mobile-nav-left list-unstyled'>
@@ -88,26 +90,25 @@ const mobileRight = (
  </div>
 )
 
-const mobileDropdown = (
-  <div className='d-block mx-3 mb-3 dropdown'>
-  <Dropdown className='mobile-menu-dropdown'>
+const MobileDropdown = ({ language, handleLang }) => (
+ <div className='d-block mx-3 mb-3 dropdown'>
+  <Dropdown className='mobile-menu-dropdown' onSelect={(e) => handleLang(e)}>
    <Dropdown.Toggle as={Button} variant='link'>
     <Icon name='globe' color='#848484' />
-    English
+    {language}
     <Icon name='arrow-down' color='#848484' />
    </Dropdown.Toggle>
    <Dropdown.Menu show={false}>
     <ul className='dropdown-menu-body list-unstyled'>
-     {data.langList.map((lang, i) => (
-      <a href='/' className={`${i === 0 && 'current'} dropdown-item `} key={i}>
+     {languages.map((lang, i) => (
+      <Dropdown.Item eventKey={lang} key={i} className={language === lang && 'current'}>
        {lang}
-      </a>
+      </Dropdown.Item>
      ))}
     </ul>
    </Dropdown.Menu>
   </Dropdown>
  </div>
 )
-
 
 export default MobileMenu

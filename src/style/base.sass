@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600|Open+Sans:300,400,600,700,800&display=swap&subset=cyrillic,cyrillic-ext,latin-ext')
+@import color
 // html
 html
   box-sizing: border-box
@@ -20,27 +22,21 @@ p
 a,
 a:hover
   text-decoration: none
-
+::selection
+  background: $color-secondary
 // app
 .App
   .container-fluid
     max-width: 1344px
     padding: 0 16px
-  .display-2
-    font-size: 4vw
-    font-weight: 500
-    line-height: 1.33
-  #navbar 
-    align-content: center
-    align-items: left 
   .btn 
     align-items: center
     text-align: center
     vertical-align: middle
-    border: 1px solid #d8d8d8
-    background-color: #fff
+    border: 1px solid $color-border-light
+    background-color: $color-background
     border-radius: 4px
-    color: #333
+    color: $color-text-dark
     font-weight: 600
     min-height: 30px
     font-size: 1.4rem
@@ -49,18 +45,18 @@ a:hover
     &:focus
       text-decoration: none
   .btn-outline-primary 
-    background-color: #fff
-    border-color: #00a5ef!important
-    color: #333
+    background-color: $color-background
+    border-color: $color-primary !important
+    color: $color-text-dark
   .btn-primary 
-    background-color: #00a5ef
-    border-color: rgba(51,51,51,.15)
-    color: #fff
+    background-color: $color-primary
+    border-color: $color-border
+    color: $color-text-white
     font-weight: 700
   .btn-secondary
-    background-color: #623590
-    border-color: rgba(51,51,51,.15)
-    color: #fff
+    background-color: $color-secondary
+    border-color: $color-border
+    color: $color-text-white
     font-weight: 700
   .btn-primary:active,
   .btn-primary:focus,
@@ -68,8 +64,8 @@ a:hover
   .show > .btn-primary.dropdown-toggle:active, 
   .show >.btn-primary.dropdown-toggle:focus,
   .show >.btn-primary.dropdown-toggle:active:focus
-    background-color: #00a5ef
-    border-color: rgba(51,51,51,.15)
+    background-color: $color-primary
+    border-color: $color-border
     box-shadow: none !important
     outline: none
   .btn-outline-primary:active,
@@ -78,8 +74,8 @@ a:hover
   .show > .btn-outline-primary.dropdown-toggle:active, 
   .show >.btn-outline-primary.dropdown-toggle:focus,
   .show >.btn-outline-primary.dropdown-toggle:active:focus
-    background-color: #ffffff
-    border-color: rgba(51,51,51,.15)
+    background-color: $color-background
+    border-color: $color-border
     box-shadow: none !important
     outline: none
   .btn-secondary:active,
@@ -88,7 +84,7 @@ a:hover
   .show > .btn-secondary.dropdown-toggle:active, 
   .show >.btn-secondary.dropdown-toggle:focus,
   .show >.btn-secondary.dropdown-toggle:active:focus
-    border-color: rgba(51,51,51,.15)
+    border-color: $color-border
     box-shadow: none !important
     outline: none
   .small,
@@ -128,18 +124,11 @@ a:hover
   min-width: 48px
 
 // media
-@media (min-width: 1200px)
-  .App
-    .display-2 
-      font-size: 48px
-
 @media (min-width: 768px)
   .App
     .container-fluid,
     &.container-fluid
       padding: 0 24px
-    .display-2 
-      font-weight: 300
     .pb-md-5,
     .py-md-5
       padding-bottom: 3.2rem !important
@@ -150,15 +139,8 @@ a:hover
     .my-md-0
       margin-bottom: 0 !important
 
-@media (min-width: 667px)
-  .App
-    #navbar
-      align-items: center
-
 @media (min-width: 568px)
   .App
-    #navbar 
-      flex-direction: row
     .d-xs-block
       display: block !important
     .d-xs-flex
@@ -167,10 +149,6 @@ a:hover
 @media (max-width: 991px)
   .md-hidden
     display: none
-    
-@media (max-width: 800px)
-  .App .display-2
-      font-size: 32px
 
 @media (max-width: 600px)
   .App
