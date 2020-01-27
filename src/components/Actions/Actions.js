@@ -12,20 +12,32 @@ const Actions = () => {
   <section className='actions-section'>
    <div className='container-fluid'>
     <div className='col-lg-10 mx-auto px-0 text-center'>
-     <h2 className='actions-title mb-2 col-md-6 mx-auto'>Over 300 ways to buy and sell bitcoin</h2>
-     <p className='actions-subtitle col-md-8 mx-auto mb-4'>Select a payment method you like and trade directly with other people just like you!</p>
+     <h2 className='actions-title mb-2 col-md-6 mx-auto'>
+       Over 300 ways to buy and sell bitcoin
+     </h2>
+     <p className='actions-subtitle col-md-8 mx-auto mb-4'>
+      Select a payment method you like and trade directly with other people just like you!
+     </p>
      <div className='actions-tabs mb-md-5 mb-4 d-flex d-md-inline-flex'>
-      <div className={`actions-tabs-tab actions-tabs-tab-sell mr-md-2 actions-tab--${tabSelect ? 'selected' : ''}`} onClick={handleTabs}>
+      <div
+       className={`actions-tabs-tab actions-tabs-tab-sell mr-md-2 actions-tab--${tabSelect ? 'selected' : ''}`}
+       onClick={handleTabs}>
        Sell Bitcoin
       </div>
-      <div className={`actions-tabs-tab actions-tabs-tab-buy ml-md-2 actions-tab--${!tabSelect ? 'selected' : ''}`} onClick={handleTabs}>
+      <div
+       className={`actions-tabs-tab actions-tabs-tab-buy ml-md-2 actions-tab--${!tabSelect ? 'selected' : ''}`}
+       onClick={handleTabs}>
        Buy Bitcoin
       </div>
      </div>
      <div className='row actions-cards'>
       {tabSelect
-       ? tabA.map((card) => <Card icon={card.icon} title={card.title} content={card.content} active={card.active} key={card.id} />)
-       : tabB.map((card) => <Card icon={card.icon} title={card.title} content={card.content} badges={card.badges} key={card.id} />)}
+       ? tabA.map((card) => (
+          <Card icon={card.icon} title={card.title} content={card.content} active={card.active} key={card.id} />
+         ))
+       : tabB.map((card) => (
+          <Card icon={card.icon} title={card.title} content={card.content} badges={card.badges} key={card.id} />
+         ))}
      </div>
      <a href='?' className='btn btn-primary btn-lg mt-3 mt-md-2 d-block d-md-inline-block'>
       View all offers
