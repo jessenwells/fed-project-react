@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600|Open+Sans:300,400,600,700,800&display=swap&subset=cyrillic,cyrillic-ext,latin-ext')
 @import color
 
-$spacer: 2rem !default
-
-
 // html
 html
   min-width: 320px
@@ -32,6 +29,7 @@ a:hover
   background: $color-secondary
 
 // app
+// shame - bootstrap overwrites  
 .App
   .container-fluid
     max-width: 1344px
@@ -151,6 +149,7 @@ a:hover
   min-width: 48px
 
 // media
+// shame - bootstrap overwrites
 @media (min-width: 768px)
   .App
     .container-fluid,
@@ -190,11 +189,13 @@ a:hover
   .App
     .d-xs-block
       display: block !important
+
     .d-xs-flex
       display: flex !important
+
     .d-xs-inline-block
         display: inline-block !important
+
 @media (max-width: 991px)
   .md-hidden
     display: none
-
