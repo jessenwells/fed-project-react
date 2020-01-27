@@ -4,7 +4,6 @@ import { useMedia } from 'hooks/useMedia'
 import { useScroll } from 'hooks/useScroll'
 import MobileMenu from './MobileMenu'
 import languages from 'store/data/languages'
-import logo from './logo'
 import Icon from '../Icon'
 
 const Header = () => {
@@ -30,10 +29,7 @@ const Header = () => {
        </button>
       </div>
       <a href='?' className='header-logo'>
-       <svg className='header-logo-image' viewBox='0 0 124 24'>
-        <path d={logo[1]} fill='#454c59'></path>
-        <path d={logo[2]} fill='#00a5ef'></path>
-       </svg>
+      <img src="assets/logo.svg" alt='logo' className='header-logo-image' />
       </a>
       <nav className={`header-menu header-menu--${winTop ? 'hide' : 'show'}`}>
        <ul className='list-unstyled d-flex align-items-center'>

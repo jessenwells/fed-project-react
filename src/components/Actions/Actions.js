@@ -15,17 +15,17 @@ const Actions = () => {
      <h2 className='actions-title mb-2 col-md-6 mx-auto'>Over 300 ways to buy and sell bitcoin</h2>
      <p className='actions-subtitle col-md-8 mx-auto mb-4'>Select a payment method you like and trade directly with other people just like you!</p>
      <div className='actions-tabs mb-md-5 mb-4 d-flex d-md-inline-flex'>
-      <div className={`actions-tabs-tab actions-tabs-tab-sell mr-md-2 ${tabSelect && 'actions-tab--selected'}`} onClick={handleTabs}>
+      <div className={`actions-tabs-tab actions-tabs-tab-sell mr-md-2 actions-tab--${tabSelect ? 'selected' : ''}`} onClick={handleTabs}>
        Sell Bitcoin
       </div>
-      <div className={`actions-tabs-tab actions-tabs-tab-buy ml-md-2 ${!tabSelect && 'actions-tab--selected'}`} onClick={handleTabs}>
+      <div className={`actions-tabs-tab actions-tabs-tab-buy ml-md-2 actions-tab--${!tabSelect ? 'selected' : ''}`} onClick={handleTabs}>
        Buy Bitcoin
       </div>
      </div>
      <div className='row actions-cards'>
       {tabSelect
-       ? tabA.map((card, i) => <Card icon={card[1]} title={card[2]} content={card[3]} active={card[4]} key={i} />)
-       : tabB.map((card, i) => <Card icon={card[1]} title={card[2]} content={card[3]} badge={card[4]} key={i} />)}
+       ? tabA.map((card) => <Card icon={card.icon} title={card.title} content={card.content} active={card.active} key={card.id} />)
+       : tabB.map((card) => <Card icon={card.icon} title={card.title} content={card.content} badges={card.badges} key={card.id} />)}
      </div>
      <a href='?' className='btn btn-primary btn-lg mt-3 mt-md-2 d-block d-md-inline-block'>
       View all offers
@@ -43,9 +43,9 @@ const Card = (props) => (
     <img className='card-top-icon mb-sm-2' src={`/assets/action-${props.icon}.svg`} alt={props.title} />
     <strong className='card-top-title ml-3 ml-md-0 mb-0 mb-sm-1'>{props.title}</strong>
    </div>
-   {props.badge && (
+   {props.badges && (
     <ul className='list-unstyled d-none d-md-flex flex-row flex-wrap mb-0'>
-     {props.badge.map((item) => (
+     {props.badges.map((item) => (
       <li className='card-badge mb-1 mr-2'>{item}</li>
      ))}
     </ul>

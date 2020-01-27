@@ -67,17 +67,17 @@ const LeftColumn = ({ tabSelect, handleTabs }) => {
    <div className='flex-grow-1'>
     <div className='widget-left-title d-none d-xs-block'>Buy bitcoin with any payment method</div>
     <div className='widget-left-tabs mt-3 d-none d-xs-flex'>
-     <div className={`widget-left-tab ${tabSelect && 'widget-left-tab--selected'}`} onClick={handleTabs}>
+     <div className={`widget-left-tab widget-left-tab--${tabSelect ? 'selected': ''}`} onClick={handleTabs}>
       Popular payment methods in the usa
      </div>
-     <div className={`widget-left-tab ${!tabSelect && 'widget-left-tab--selected'}`} onClick={handleTabs}>
+     <div className={`widget-left-tab widget-left-tab--${!tabSelect ? 'selected': ''}`} onClick={handleTabs}>
       Popular on Paxful
      </div>
     </div>
     <div className='widget-left-payments d-none d-xs-flex'>
      {tabSelect
-      ? tabA.map((pay, i) => <Payments title={pay[1]} icon={pay[2]} key={i} />)
-      : tabB.map((pay, i) => <Payments title={pay[1]} icon={pay[2]} key={i} />)}
+      ? tabA.map((pay) => <Payments title={pay.title} icon={pay.icon} key={pay.id} />)
+      : tabB.map((pay) => <Payments title={pay.title} icon={pay.icon} key={pay.id} />)}
     </div>
     <div className='widget-left-input'>
      <label htmlFor='' className='widget-left-input-title'>

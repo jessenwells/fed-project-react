@@ -4,6 +4,8 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Widget from './components/Widget'
 import Actions from './components/Actions'
+import Media from './components/Media'
+import Start from './components/Start'
 import Footer from './components/Footer'
 import 'style/state.sass'
 
@@ -15,6 +17,8 @@ const App = () => {
     <Hero />
     <Widget />
     <Actions />
+    <Media />
+    <Start />
    </main>
    <Footer />
   </div>
