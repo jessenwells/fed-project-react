@@ -19,7 +19,7 @@ const Media = () => {
    },
    {
     breakpoint: 668,
-    settings: { slidesToShow: 2, rows: 4, slidesPerRow: 1, arrows: false, dots: true }
+    settings: { slidesToShow: 2, rows: 4, slidesPerRow: 1, infinite: false, arrows: false, dots: true }
    }
   ]
  }
