@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Container, Col } from 'react-bootstrap'
 import YouTube from 'react-youtube'
 import Slider from 'react-slick'
 import logos from 'store/data/logos'
@@ -26,8 +27,8 @@ const Media = () => {
 
  return (
   <section className='media-section'>
-   <div className='container-fluid'>
-    <div className='col-lg-10 mx-auto px-0'>
+   <Container fluid>
+    <Col lg={10} className='mx-auto px-0'>
      <h2 className='media-title mb-2 col-md-6 mx-auto'>Paxful in the media</h2>
      <p className='media-content mb-4 col-md-8 mx-auto'>
       Paxful is very popular in the cryptocurrency space and has had extensive coverage in many famous magazines. One of our
@@ -51,8 +52,8 @@ const Media = () => {
        ))}
       </Slider>
      </div>
-    </div>
-   </div>
+    </Col>
+   </Container>
   </section>
  )
 }

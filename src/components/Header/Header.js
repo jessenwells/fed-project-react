@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Dropdown, Button, ButtonGroup } from 'react-bootstrap'
+import { Container, Dropdown, Button, ButtonGroup } from 'react-bootstrap'
 import { useMedia } from 'hooks/useMedia'
 import { useScroll } from 'hooks/useScroll'
 import MobileMenu from './MobileMenu'
@@ -19,7 +19,7 @@ const Header = () => {
    <MobileMenu mobileOpen={mobileOpen} language={language} handleLang={handleLang} />
    <div className='header-placeholder'></div>
    <div className={`header-container header-container--${winTop ? 'show' : 'hide'}`}>
-    <div className='container-fluid'>
+    <Container fluid>
      <div className='header-top'>
       <div className='header-top-bmenu'>
        <button className={`bmenu bmenu--${mobileOpen ? 'show' : 'hide'}`} type='button' onClick={handleMobile}>
@@ -29,7 +29,7 @@ const Header = () => {
        </button>
       </div>
       <a href='?' className='header-logo'>
-      <img src="assets/logo.svg" alt='logo' className='header-logo-image' />
+       <img src='assets/logo.svg' alt='logo' className='header-logo-image' />
       </a>
       <nav className={`header-menu header-menu--${winTop ? 'hide' : 'show'}`}>
        <ul className='list-unstyled d-flex align-items-center'>
@@ -122,7 +122,7 @@ const Header = () => {
        </div>
       </nav>
      </div>
-    </div>
+    </Container>
    </div>
   </header>
  )

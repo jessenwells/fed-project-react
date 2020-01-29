@@ -6,7 +6,7 @@ const Hero = () => {
   <section className='hero-section'>
    <Container fluid>
     <Col lg={10} className='mx-auto px-0'>
-     <Row className='row justify-content-end flex-column-reverse flex-md-row'>
+     <Row className='justify-content-end flex-column-reverse flex-md-row'>
       <Col lg={9} md={8} className='text-center text-md-left'>
        <h1 className='hero-title'>Welcome to Paxful</h1>
        <p className='mb-0'>

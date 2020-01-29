@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Container, Col, Row } from 'react-bootstrap'
 import actions from 'store/data/actions'
 
 const Actions = () => {
@@ -10,27 +11,27 @@ const Actions = () => {
 
  return (
   <section className='actions-section'>
-   <div className='container-fluid'>
-    <div className='col-lg-10 mx-auto px-0 text-center'>
-     <h2 className='actions-title mb-2 col-md-6 mx-auto'>
-       Over 300 ways to buy and sell bitcoin
-     </h2>
+   <Container fluid>
+    <Col lg={10} className='mx-auto px-0 text-center'>
+     <h2 className='actions-title mb-2 col-md-6 mx-auto'>Over 300 ways to buy and sell bitcoin</h2>
      <p className='actions-subtitle col-md-8 mx-auto mb-4'>
       Select a payment method you like and trade directly with other people just like you!
      </p>
      <div className='actions-tabs mb-md-5 mb-4 d-flex d-md-inline-flex'>
       <div
        className={`actions-tabs-tab actions-tabs-tab-sell mr-md-2 actions-tab--${tabSelect ? 'selected' : ''}`}
-       onClick={handleTabs}>
+       onClick={handleTabs}
+      >
        Sell Bitcoin
       </div>
       <div
        className={`actions-tabs-tab actions-tabs-tab-buy ml-md-2 actions-tab--${!tabSelect ? 'selected' : ''}`}
-       onClick={handleTabs}>
+       onClick={handleTabs}
+      >
        Buy Bitcoin
       </div>
      </div>
-     <div className='row actions-cards'>
+     <Row className='actions-cards'>
       {tabSelect
        ? tabA.map((card) => (
           <Card icon={card.icon} title={card.title} content={card.content} active={card.active} key={card.id} />
@@ -38,18 +39,18 @@ const Actions = () => {
        : tabB.map((card) => (
           <Card icon={card.icon} title={card.title} content={card.content} badges={card.badges} key={card.id} />
          ))}
-     </div>
+     </Row>
      <a href='?' className='btn btn-primary btn-lg mt-3 mt-md-2 d-block d-md-inline-block'>
       View all offers
      </a>
-    </div>
-   </div>
+    </Col>
+   </Container>
   </section>
  )
 }
 
 const Card = (props) => (
- <div className='col-md-6 col-lg-4 mb-2 mb-md-4'>
+ <Col md={6} lg={4} className='mb-2 mb-md-4'>
   <a href='?' className={`actions-cards-card p-3 p-md-4 ${props.active}`}>
    <div className='card-top flex-md-column align-items-md-start'>
     <img className='card-top-icon mb-sm-2' src={`/assets/action-${props.icon}.svg`} alt={props.title} />
@@ -65,7 +66,7 @@ const Card = (props) => (
    <p className='card-content mt-1 mb-0 d-none d-sm-block'>{props.content}</p>
    {props.active && <span className='action-card-soon'>Coming Soon</span>}
   </a>
- </div>
+ </Col>
 )
 
 export default Actions
